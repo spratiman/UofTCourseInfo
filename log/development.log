@@ -1,0 +1,7 @@
+Started GET "/" for 127.0.0.1 at 2016-11-22 01:19:40 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 1798ms (Views: 1771.9ms | ActiveRecord: 0.0ms)
+
+

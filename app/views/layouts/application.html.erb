@@ -24,6 +24,7 @@
       <% else %>
         <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> |
         <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+        <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
       <% end %>
     <div class="container">
       <%= yield %>

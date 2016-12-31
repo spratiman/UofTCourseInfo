@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   resources :courses
   get '/fetchcourses', to: 'courses#fetch', defaults: { format: 'js' }
+  get '/add', to: 'courses#add'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

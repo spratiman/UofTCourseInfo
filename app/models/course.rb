@@ -1,4 +1,5 @@
 class Course < ApplicationRecord
+	belongs_to :user
 	validates :code, uniqueness: true
 
 	filterrific :default_filter_params => { :sorted_by => 'code_asc' },
@@ -83,5 +84,50 @@ class Course < ApplicationRecord
 			course = Course.new(code: code, title: title, description: description)
 			course.save
 		end
+	end
+
+	#Initialize Student Session
+	def initialize(session)
+		@session = session
+		@session[:student] ||= {}
+	end
+
+	#Student Count
+	def student_count
+		if (@session[:student][:courses] && @session[:student][:courses] != {})
+				@session[:student][:courses].count
+		else
+			0
+		end
+	end
+
+	#Student Contents
+	def student_contents
+		courses = @session[:student][:courses]
+
+		if (courses && courses != {})
+
+			#Determine Quantities
+			quantities = Hash[courses.uniq.map { |i| [i, courses.count(i)]  }]
+
+			#Get courses from DB
+			courses_array = Course.find(courses.uniq)
+
+			#Create quantity (qty) array
+			courses_new = {}
+			courses_array.each{
+				|a| courses_new[a] = {"qty" => quantities[a.id.to_s]}
+			}
+
+			#Output appended
+			return courses_new
+		end
+	end
+
+	#Build JSON Requests
+	def build_json
+		session = @session[:student][:courses]
+		json = {:qty => self.student_count, :items => Hash[session.uniq.map { |i| [i, session.count(i)]  }]}
+		return json
 	end
 end

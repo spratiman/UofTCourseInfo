@@ -14,7 +14,7 @@ class CoursesController < ApplicationController
 			}
 		) or return
 
-		#@courses = Course.all 
+		#@courses = Course.all
 		@courses = @filterrific.find.page(params[:page])
 
 		respond_to do |format|
@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
 	def new
 		@course =Course.new
 	end
-		
+
 	def edit
 		@course = Course.find(params[:id])
 	end
@@ -71,6 +71,50 @@ class CoursesController < ApplicationController
 	def fetch
 		@courses = Course.all
 	end
+
+	#Add
+	def add
+		session[:student] ||={}
+		courses = session[:student][:courses]
+
+		#If exists, add new, else create a new variable
+		if (products && products != {})
+			session[:student][:courses] << params[:id]
+		else
+			session[:student][:courses] = Array(params[:id])
+		end
+
+		#Handle the request
+		respond_to do |format|
+			format.json {render json: student_session.build_json}
+			format.html {redirect_to cart_index_path}
+		end
+	end
+
+	#Delete
+	def delete
+		session[:student] ||={}
+		courses = session[:student][:courses]
+		id = params[:id]
+		all = params[:all]
+
+		#Is the ID present?
+		unless id.blank?
+			unless all.blank?
+				courses.delete(params['id'])
+			else
+				courses.delete_at(courses.index(id) || courses.length)
+			end
+		else
+			courses.delete
+		end
+
+		#Handle the request
+		respond_to do |format|
+			format.json { render json: student_session.build_json}
+			format.html {redirect_to student_index_path}
+		end
+		end
 
 	private
 

@@ -1,10 +1,13 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "UofTCourseInfo", '#', id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   '#' %></li>
-      </ul>
-    </nav>
-  </div>
+<header class="navigation-bar navigation-bar--main site-header">
+	<div class="container">
+		<a href="/" class="navigation-bar__logo">
+			<%= image_tag "logo.png" %>
+		</a>
+		<nav class="navigation-bar__nav navigation-bar__nav--main">
+			<ul class="inline-list">
+				<li class="inline-list__item"><a href="">Explore</a></li>
+				<li class="inline-list__item"><%= link_to "Sign up", new_user_registration_path %></li>
+			</ul>
+		</nav>
+	</div>
 </header>

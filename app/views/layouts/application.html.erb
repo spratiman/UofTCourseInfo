@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
     <title><%= yield(:title) %> | UofT Course Info App</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all',

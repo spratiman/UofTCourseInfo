@@ -1,7 +1,7 @@
 <header class="navigation-bar navigation-bar--main site-header">
 	<div class="container">
 		<% if user_signed_in? %>
-			<%= link_to(:user_root, class:"navigation-bar__logo") do %>
+			<%= link_to(:root, class:"navigation-bar__logo") do %>
 				<%= image_tag "logo.png" %>
 			<% end %>
 		<% else %>

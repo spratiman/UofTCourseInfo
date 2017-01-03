@@ -5,9 +5,14 @@ Rails.application.routes.draw do
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => "destroy_user_session_path"
   end
 
-  root 'static_pages#index'
+  # Serve up landing page iff the user is not already logged in,
+  # otherwise take them to app home.
+  authenticated :user do
+    root :to => "static_pages#home"
+  end
+  root :to => "static_pages#index"
+
   get '/signup', to: 'users#new'
-  get '/home' => 'static_pages#home', as: :user_root
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

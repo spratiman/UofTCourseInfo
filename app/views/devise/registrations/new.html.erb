@@ -11,17 +11,17 @@
 
             <%= devise_error_messages! %>
 
-            <%= f.label :email %>
-            <%= f.email_field :email, autofocus: true %>
+            <%= f.label :email, :class => 'login-form__label' %>
+            <%= f.email_field :email, autofocus: true, :class => 'login-form__input' %>
 
-            <%= f.label :password %>
+            <%= f.label :password, :class => 'login-form__label' %>
             <% if @minimum_password_length %>
             <em class="small">(<%= @minimum_password_length %> characters minimum)</em>
             <% end %>
-            <%= f.password_field :password, autocomplete: "off" %>
+            <%= f.password_field :password, autocomplete: "off", :class => 'login-form__input' %>
 
-            <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            <%= f.label :password_confirmation, :class => 'login-form__label' %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'login-form__input' %>
             
             <%= f.submit "Sign up", :class => 'btn btn--fill btn--primary' %>
           <% end %>

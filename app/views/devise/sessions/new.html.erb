@@ -8,10 +8,10 @@
         <%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path, :class => 'btn btn--fill btn--facebook' %>
         <span class="text-divider">OR</span>
         <%= form_for(:user, :url => session_path(:user)) do |f| %>
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true %>
-          <%= f.label :password %>
-          <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.label :email, :class => 'login-form__label' %>
+          <%= f.email_field :email, autofocus: true, :class => 'login-form__input' %>
+          <%= f.label :password, :class => 'login-form__label' %>
+          <%= f.password_field :password, autocomplete: "off", :class => 'login-form__input' %>
             <%= link_to "Forgot your password?", new_password_path(:user), :class => 'login-form__link' %>
           <%= f.submit "Login", :class => ['btn','btn--fill', 'btn--primary'] %>
         <% end %>

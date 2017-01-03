@@ -1,4 +1,4 @@
-<header class="navigation-bar navigation-bar--main site-header">
+<header class="navigation-bar navigation-bar--main <%= 'site-header' if !user_signed_in? %>">
 	<div class="container">
 		<% if user_signed_in? %>
 			<%= link_to(:root, class:"navigation-bar__logo") do %>
@@ -13,7 +13,7 @@
 			<ul class="inline-list">
 				<li class="inline-list__item"><a href="">Explore</a></li>
 				<% if user_signed_in? %>
-					<!-- Put user profile icon with dropdown here -->
+					<!-- Put profile code here -->
 				<% else %>
 				<li class="inline-list__item"><%= link_to "Sign up", new_user_registration_path %></li>
 				<% end -%>

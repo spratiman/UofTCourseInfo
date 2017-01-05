@@ -4216,3 +4216,1878 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 208ms (Views: 45.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-01-04 22:09:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (6564.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRatings (20161228202836)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "course_id" integer, "value" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_ratings_on_user_id" ON "ratings" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_ratings_on_course_id" ON "ratings" ("course_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_ratings_on_user_id_and_course_id" ON "ratings" ("user_id", "course_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161228202836"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20161231172152)
+  [1m[35m (15.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text DEFAULT '' NOT NULL, "user_id" integer, "course_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_course_id" ON "comments" ("course_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_comments_on_user_id_and_course_id" ON "comments" ("user_id", "course_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161231172152"]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id_and_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id_and_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id_and_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id_and_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-01-04 22:11:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+Completed 401 Unauthorized in 172ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-04 22:11:45 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (842.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (15.6ms)
+Completed 200 OK in 7961ms (Views: 7821.7ms | ActiveRecord: 22.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-01-04 22:13:25 -0500
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:CoursesController> at C:/Users/IBM_ADMIN/Documents/GitHub/UofTCourseInfo/app/controllers/courses_controller.rb:2)
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (138.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY courses.code asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered courses/_list.html.erb (362.7ms)
+  Rendered courses/index.html.erb within layouts/application (707.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 3256ms (Views: 2932.3ms | ActiveRecord: 138.0ms)
+
+
+Started GET "/courses?utf8=%E2%9C%93&filterrific%5Bsearch_query%5D=csc&filterrific%5Bsorted_by%5D=code_asc&_=1483586009345" for 127.0.0.1 at 2017-01-04 22:13:41 -0500
+Processing by CoursesController#index as JS
+Started GET "/courses?utf8=%E2%9C%93&filterrific%5Bsearch_query%5D=csc&filterrific%5Bsorted_by%5D=code_asc&_=1483586009346" for 127.0.0.1 at 2017-01-04 22:13:41 -0500
+  Parameters: {"utf8"=>"✓", "filterrific"=>{"search_query"=>"csc", "sorted_by"=>"code_asc"}, "_"=>"1483586009345"}
+Processing by CoursesController#index as JS
+  Parameters: {"utf8"=>"✓", "filterrific"=>{"search_query"=>"csc", "sorted_by"=>"code_asc"}, "_"=>"1483586009346"}
+  Rendering courses/index.js.erb
+  Rendering courses/index.js.erb
+Started GET "/courses?utf8=%E2%9C%93&filterrific%5Bsearch_query%5D=csc3&filterrific%5Bsorted_by%5D=code_asc&_=1483586009347" for 127.0.0.1 at 2017-01-04 22:13:43 -0500
+Started GET "/courses?utf8=%E2%9C%93&filterrific%5Bsearch_query%5D=csc3&filterrific%5Bsorted_by%5D=code_asc&_=1483586009348" for 127.0.0.1 at 2017-01-04 22:13:44 -0500
+  [1m[36mCourse Load (48.7ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE ((LOWER(courses.code) LIKE 'csc%' OR LOWER(courses.title) LIKE 'csc%' OR LOWER(courses.description) LIKE 'csc%')) ORDER BY courses.code asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+Started GET "/courses?utf8=%E2%9C%93&filterrific%5Bsearch_query%5D=csc321&filterrific%5Bsorted_by%5D=code_asc&_=1483586009350" for 127.0.0.1 at 2017-01-04 22:13:44 -0500
+Processing by CoursesController#index as JS
+  [1m[36mCourse Load (78.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE ((LOWER(courses.code) LIKE 'csc%' OR LOWER(courses.title) LIKE 'csc%' OR LOWER(courses.description) LIKE 'csc%')) ORDER BY courses.code asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+Processing by CoursesController#index as JS
+  Rendered courses/_list.html.erb (332.7ms)
+Processing by CoursesController#index as JS
+  Parameters: {"utf8"=>"✓", "filterrific"=>{"search_query"=>"csc3", "sorted_by"=>"code_asc"}, "_"=>"1483586009347"}
+  Rendered courses/_list.html.erb (504.4ms)
+  Parameters: {"utf8"=>"✓", "filterrific"=>{"search_query"=>"csc3", "sorted_by"=>"code_asc"}, "_"=>"1483586009348"}
+  Rendered courses/index.js.erb (1111.2ms)
+  Parameters: {"utf8"=>"✓", "filterrific"=>{"search_query"=>"csc321", "sorted_by"=>"code_asc"}, "_"=>"1483586009350"}
+  Rendered courses/index.js.erb (1173.1ms)
+Completed 200 OK in 4251ms (Views: 3885.9ms | ActiveRecord: 48.7ms)
+
+
+  Rendering courses/index.js.erb
+Completed 200 OK in 5136ms (Views: 4758.3ms | ActiveRecord: 78.0ms)
+
+
+  Rendering courses/index.js.erb
+  Rendering courses/index.js.erb
+  [1m[36mCourse Load (149.8ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE ((LOWER(courses.code) LIKE 'csc3%' OR LOWER(courses.title) LIKE 'csc3%' OR LOWER(courses.description) LIKE 'csc3%')) ORDER BY courses.code asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+Started GET "/courses?utf8=%E2%9C%93&filterrific%5Bsearch_query%5D=csc321&filterrific%5Bsorted_by%5D=code_asc&_=1483586009349" for 127.0.0.1 at 2017-01-04 22:13:48 -0500
+  [1m[36mCourse Load (25.6ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE ((LOWER(courses.code) LIKE 'csc3%' OR LOWER(courses.title) LIKE 'csc3%' OR LOWER(courses.description) LIKE 'csc3%')) ORDER BY courses.code asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCourse Load (74.9ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE ((LOWER(courses.code) LIKE 'csc321%' OR LOWER(courses.title) LIKE 'csc321%' OR LOWER(courses.description) LIKE 'csc321%')) ORDER BY courses.code asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered courses/_list.html.erb (895.8ms)
+Processing by CoursesController#index as JS
+  Rendered courses/_list.html.erb (291.0ms)
+  Rendered courses/_list.html.erb (284.1ms)
+  Rendered courses/index.js.erb (1836.4ms)
+  Parameters: {"utf8"=>"✓", "filterrific"=>{"search_query"=>"csc321", "sorted_by"=>"code_asc"}, "_"=>"1483586009349"}
+  Rendered courses/index.js.erb (953.3ms)
+  Rendered courses/index.js.erb (759.8ms)
+Completed 200 OK in 4758ms (Views: 4307.2ms | ActiveRecord: 149.8ms)
+
+
+Completed 200 OK in 4490ms (Views: 3846.8ms | ActiveRecord: 25.6ms)
+
+
+Completed 200 OK in 3599ms (Views: 2844.2ms | ActiveRecord: 74.9ms)
+
+
+  Rendering courses/index.js.erb
+  [1m[36mCourse Load (31.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE ((LOWER(courses.code) LIKE 'csc321%' OR LOWER(courses.title) LIKE 'csc321%' OR LOWER(courses.description) LIKE 'csc321%')) ORDER BY courses.code asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered courses/_list.html.erb (31.2ms)
+  Rendered courses/index.js.erb (227.9ms)
+Completed 200 OK in 1656ms (Views: 1399.9ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/courses?utf8=%E2%9C%93&filterrific%5Bsearch_query%5D=csc321&filterrific%5Bsorted_by%5D=code_asc&_=1483586009351" for 127.0.0.1 at 2017-01-04 22:13:56 -0500
+Started GET "/courses?utf8=%E2%9C%93&filterrific%5Bsearch_query%5D=csc321&filterrific%5Bsorted_by%5D=code_asc&_=1483586009352" for 127.0.0.1 at 2017-01-04 22:13:56 -0500
+Processing by CoursesController#index as JS
+Processing by CoursesController#index as JS
+  Parameters: {"utf8"=>"✓", "filterrific"=>{"search_query"=>"csc321", "sorted_by"=>"code_asc"}, "_"=>"1483586009351"}
+  Parameters: {"utf8"=>"✓", "filterrific"=>{"search_query"=>"csc321", "sorted_by"=>"code_asc"}, "_"=>"1483586009352"}
+  Rendering courses/index.js.erb
+  Rendering courses/index.js.erb
+  [1m[36mCourse Load (171.6ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE ((LOWER(courses.code) LIKE 'csc321%' OR LOWER(courses.title) LIKE 'csc321%' OR LOWER(courses.description) LIKE 'csc321%')) ORDER BY courses.code asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered courses/_list.html.erb (296.4ms)
+  [1m[36mCourse Load (46.8ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE ((LOWER(courses.code) LIKE 'csc321%' OR LOWER(courses.title) LIKE 'csc321%' OR LOWER(courses.description) LIKE 'csc321%')) ORDER BY courses.code asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered courses/index.js.erb (633.5ms)
+  Rendered courses/_list.html.erb (154.8ms)
+Completed 200 OK in 3068ms (Views: 2391.4ms | ActiveRecord: 171.6ms)
+
+
+  Rendered courses/index.js.erb (513.7ms)
+Completed 200 OK in 3013ms (Views: 2516.4ms | ActiveRecord: 46.8ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2017-01-04 22:14:02 -0500
+Processing by CoursesController#add as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-04 22:14:02 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (278.0ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 2051ms (Views: 2048.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2017-01-04 22:14:05 -0500
+Processing by CoursesController#add as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-04 22:14:05 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (301.0ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 2999ms (Views: 2994.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2017-01-04 22:14:17 -0500
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 2206ms (Views: 1953.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-01-04 22:14:26 -0500
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (13.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE ((LOWER(courses.code) LIKE 'csc321%' OR LOWER(courses.title) LIKE 'csc321%' OR LOWER(courses.description) LIKE 'csc321%')) ORDER BY courses.code asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered courses/_list.html.erb (22.0ms)
+  Rendered courses/index.html.erb within layouts/application (151.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 1953ms (Views: 1844.3ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-04 22:14:29 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (278.0ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 1915ms (Views: 1912.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-01-04 22:14:49 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YzX5VCNkfevCME0+btaXoUM2VLR8B0MuaL8fmzTQxF5RYZASGx6usWcE95KBMUJCiQhhqmVZLgLbW8sw2PKmKQ==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 117ms (ActiveRecord: 1.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YzX5VCNkfevCME0+btaXoUM2VLR8B0MuaL8fmzTQxF5RYZASGx6usWcE95KBMUJCiQhhqmVZLgLbW8sw2PKmKQ==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 263ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt_ext):
+  
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:16:in `rescue in <top (required)>'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:12:in `<top (required)>'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+devise (4.2.0) lib/devise/encryptor.rb:1:in `<top (required)>'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+devise (4.2.0) lib/devise/models/database_authenticatable.rb:147:in `password_digest'
+devise (4.2.0) lib/devise/models/database_authenticatable.rb:40:in `password='
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:46:in `public_send'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:46:in `_assign_attribute'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:40:in `block in _assign_attributes'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:39:in `each'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:39:in `_assign_attributes'
+activerecord (5.0.0.1) lib/active_record/attribute_assignment.rb:26:in `_assign_attributes'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:33:in `assign_attributes'
+activerecord (5.0.0.1) lib/active_record/core.rb:319:in `initialize'
+activerecord (5.0.0.1) lib/active_record/inheritance.rb:65:in `new'
+activerecord (5.0.0.1) lib/active_record/inheritance.rb:65:in `new'
+devise (4.2.0) app/controllers/devise/sessions_controller.rb:9:in `new'
+actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:251:in `block in action'
+devise (4.2.0) lib/devise/failure_app.rb:73:in `recall'
+devise (4.2.0) lib/devise/failure_app.rb:39:in `respond'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:251:in `block in action'
+devise (4.2.0) lib/devise/failure_app.rb:21:in `call'
+devise (4.2.0) lib/devise/delegator.rb:5:in `call'
+warden (1.2.6) lib/warden/manager.rb:142:in `call_failure_app'
+warden (1.2.6) lib/warden/manager.rb:128:in `process_unauthenticated'
+warden (1.2.6) lib/warden/manager.rb:43:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (23.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (27.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (6571.4ms)
+Started GET "/" for 127.0.0.1 at 2017-01-04 22:33:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+Completed 401 Unauthorized in 243ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-04 22:33:50 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (733.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 5768ms (Views: 5666.5ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-01-04 22:34:06 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gbiOuupx9IjcolEAFKsE3Xre9ccv4c+imC2zUn0JZ69ZPI/8ulNizf9KAUXgs+wvyvVboe8X1D0hT67C+aSEzg==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 39ms (ActiveRecord: 2.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gbiOuupx9IjcolEAFKsE3Xre9ccv4c+imC2zUn0JZ69ZPI/8ulNizf9KAUXgs+wvyvVboe8X1D0hT67C+aSEzg==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt_ext):
+  
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:16:in `rescue in <top (required)>'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:12:in `<top (required)>'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+devise (4.2.0) lib/devise/encryptor.rb:1:in `<top (required)>'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+devise (4.2.0) lib/devise/models/database_authenticatable.rb:147:in `password_digest'
+devise (4.2.0) lib/devise/models/database_authenticatable.rb:40:in `password='
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:46:in `public_send'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:46:in `_assign_attribute'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:40:in `block in _assign_attributes'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:39:in `each'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:39:in `_assign_attributes'
+activerecord (5.0.0.1) lib/active_record/attribute_assignment.rb:26:in `_assign_attributes'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:33:in `assign_attributes'
+activerecord (5.0.0.1) lib/active_record/core.rb:319:in `initialize'
+activerecord (5.0.0.1) lib/active_record/inheritance.rb:65:in `new'
+activerecord (5.0.0.1) lib/active_record/inheritance.rb:65:in `new'
+devise (4.2.0) app/controllers/devise/sessions_controller.rb:9:in `new'
+actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:251:in `block in action'
+devise (4.2.0) lib/devise/failure_app.rb:73:in `recall'
+devise (4.2.0) lib/devise/failure_app.rb:39:in `respond'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:251:in `block in action'
+devise (4.2.0) lib/devise/failure_app.rb:21:in `call'
+devise (4.2.0) lib/devise/delegator.rb:5:in `call'
+warden (1.2.6) lib/warden/manager.rb:142:in `call_failure_app'
+warden (1.2.6) lib/warden/manager.rb:128:in `process_unauthenticated'
+warden (1.2.6) lib/warden/manager.rb:43:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (38.7ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (6516.6ms)
+Started GET "/" for 127.0.0.1 at 2017-01-04 22:43:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+Completed 401 Unauthorized in 205ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-04 22:44:33 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (489.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 6514ms (Views: 6460.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-01-04 22:44:43 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5OT+KqiRRNDfuv6ic5GEXe6Cj4Rs3W7FEAiFybwQSnc8YP9s+LPSlfxSrueHiWyvXqkh4qwrdVqpaphZOL2pFg==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (31.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 109ms (ActiveRecord: 31.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5OT+KqiRRNDfuv6ic5GEXe6Cj4Rs3W7FEAiFybwQSnc8YP9s+LPSlfxSrueHiWyvXqkh4qwrdVqpaphZOL2pFg==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt_ext):
+  
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:16:in `rescue in <top (required)>'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:12:in `<top (required)>'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+devise (4.2.0) lib/devise/encryptor.rb:1:in `<top (required)>'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+devise (4.2.0) lib/devise/models/database_authenticatable.rb:147:in `password_digest'
+devise (4.2.0) lib/devise/models/database_authenticatable.rb:40:in `password='
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:46:in `public_send'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:46:in `_assign_attribute'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:40:in `block in _assign_attributes'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:39:in `each'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:39:in `_assign_attributes'
+activerecord (5.0.0.1) lib/active_record/attribute_assignment.rb:26:in `_assign_attributes'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:33:in `assign_attributes'
+activerecord (5.0.0.1) lib/active_record/core.rb:319:in `initialize'
+activerecord (5.0.0.1) lib/active_record/inheritance.rb:65:in `new'
+activerecord (5.0.0.1) lib/active_record/inheritance.rb:65:in `new'
+devise (4.2.0) app/controllers/devise/sessions_controller.rb:9:in `new'
+actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:251:in `block in action'
+devise (4.2.0) lib/devise/failure_app.rb:73:in `recall'
+devise (4.2.0) lib/devise/failure_app.rb:39:in `respond'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:251:in `block in action'
+devise (4.2.0) lib/devise/failure_app.rb:21:in `call'
+devise (4.2.0) lib/devise/delegator.rb:5:in `call'
+warden (1.2.6) lib/warden/manager.rb:142:in `call_failure_app'
+warden (1.2.6) lib/warden/manager.rb:128:in `process_unauthenticated'
+warden (1.2.6) lib/warden/manager.rb:43:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (46.8ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (6465.5ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-01-04 22:49:26 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5OT+KqiRRNDfuv6ic5GEXe6Cj4Rs3W7FEAiFybwQSnc8YP9s+LPSlfxSrueHiWyvXqkh4qwrdVqpaphZOL2pFg==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (12.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 56ms (ActiveRecord: 12.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5OT+KqiRRNDfuv6ic5GEXe6Cj4Rs3W7FEAiFybwQSnc8YP9s+LPSlfxSrueHiWyvXqkh4qwrdVqpaphZOL2pFg==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt_ext):
+  
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:16:in `rescue in <top (required)>'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:12:in `<top (required)>'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+devise (4.2.0) lib/devise/encryptor.rb:1:in `<top (required)>'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+devise (4.2.0) lib/devise/models/database_authenticatable.rb:147:in `password_digest'
+devise (4.2.0) lib/devise/models/database_authenticatable.rb:40:in `password='
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:46:in `public_send'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:46:in `_assign_attribute'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:40:in `block in _assign_attributes'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:39:in `each'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:39:in `_assign_attributes'
+activerecord (5.0.0.1) lib/active_record/attribute_assignment.rb:26:in `_assign_attributes'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:33:in `assign_attributes'
+activerecord (5.0.0.1) lib/active_record/core.rb:319:in `initialize'
+activerecord (5.0.0.1) lib/active_record/inheritance.rb:65:in `new'
+activerecord (5.0.0.1) lib/active_record/inheritance.rb:65:in `new'
+devise (4.2.0) app/controllers/devise/sessions_controller.rb:9:in `new'
+actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:251:in `block in action'
+devise (4.2.0) lib/devise/failure_app.rb:73:in `recall'
+devise (4.2.0) lib/devise/failure_app.rb:39:in `respond'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:251:in `block in action'
+devise (4.2.0) lib/devise/failure_app.rb:21:in `call'
+devise (4.2.0) lib/devise/delegator.rb:5:in `call'
+warden (1.2.6) lib/warden/manager.rb:142:in `call_failure_app'
+warden (1.2.6) lib/warden/manager.rb:128:in `process_unauthenticated'
+warden (1.2.6) lib/warden/manager.rb:43:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (40.6ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (6521.5ms)
+Started GET "/" for 127.0.0.1 at 2017-01-04 23:10:28 -0500
+Processing by StaticPagesController#home as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-04 23:10:28 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (321.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 2193ms (Views: 2200.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-01-04 23:10:34 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lwe30qFAXZmzln6AK82UfE1733JUS9qiZhCb751zVMP3g7aU8WLL3JB+LsXf1XyO/VBxFJS9wT3fcoZ/Gd63og==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 62ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lwe30qFAXZmzln6AK82UfE1733JUS9qiZhCb751zVMP3g7aU8WLL3JB+LsXf1XyO/VBxFJS9wT3fcoZ/Gd63og==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+devise (4.2.0) lib/devise/encryptor.rb:1:in `<top (required)>'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+devise (4.2.0) lib/devise/models/database_authenticatable.rb:147:in `password_digest'
+devise (4.2.0) lib/devise/models/database_authenticatable.rb:40:in `password='
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:46:in `public_send'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:46:in `_assign_attribute'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:40:in `block in _assign_attributes'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:39:in `each'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:39:in `_assign_attributes'
+activerecord (5.0.0.1) lib/active_record/attribute_assignment.rb:26:in `_assign_attributes'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:33:in `assign_attributes'
+activerecord (5.0.0.1) lib/active_record/core.rb:319:in `initialize'
+activerecord (5.0.0.1) lib/active_record/inheritance.rb:65:in `new'
+activerecord (5.0.0.1) lib/active_record/inheritance.rb:65:in `new'
+devise (4.2.0) app/controllers/devise/sessions_controller.rb:9:in `new'
+actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:251:in `block in action'
+devise (4.2.0) lib/devise/failure_app.rb:73:in `recall'
+devise (4.2.0) lib/devise/failure_app.rb:39:in `respond'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:251:in `block in action'
+devise (4.2.0) lib/devise/failure_app.rb:21:in `call'
+devise (4.2.0) lib/devise/delegator.rb:5:in `call'
+warden (1.2.6) lib/warden/manager.rb:142:in `call_failure_app'
+warden (1.2.6) lib/warden/manager.rb:128:in `process_unauthenticated'
+warden (1.2.6) lib/warden/manager.rb:43:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (0.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (6679.5ms)
+Started GET "/" for 127.0.0.1 at 2017-01-04 23:24:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-04 23:24:50 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (95.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 1002ms (Views: 966.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-01-04 23:25:09 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pdYnCzPFofzo/hYvlpCLb4kln1kDjF/Rpwg1wVI15Gl9UiZNY+c3ucsWRmpiiGOdOQ4xP8N6RE4eaihR1pgHCA==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pdYnCzPFofzo/hYvlpCLb4kln1kDjF/Rpwg1wVI15Gl9UiZNY+c3ucsWRmpiiGOdOQ4xP8N6RE4eaihR1pgHCA==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (15.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (40.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 987ms (Views: 833.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-01-04 23:25:38 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T4tmzU966Mzio8OeDCBUBANsSCCcSdtD/MmQ9O0JvrSXD2eLH1h+icFLk9v4OLz2s0fmRly/wNxFq41kaaRd1Q==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 64ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T4tmzU966Mzio8OeDCBUBANsSCCcSdtD/MmQ9O0JvrSXD2eLH1h+icFLk9v4OLz2s0fmRly/wNxFq41kaaRd1Q==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (31.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 551ms (Views: 409.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-04 23:25:42 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (35.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 469ms (Views: 461.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-04 23:25:42 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (110.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 883ms (Views: 881.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-04 23:25:50 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.0ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 476ms (Views: 475.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-01-04 23:25:53 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DUp/udlZpS+gQ1by2HhJ+EAw6LP2sP/lXgtAg34MZBA/Hhb/4SN2dQV37F43n5wbig7dre/uksnt75Qoki4GZw==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 1.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DUp/udlZpS+gQ1by2HhJ+EAw6LP2sP/lXgtAg34MZBA/Hhb/4SN2dQV37F43n5wbig7dre/uksnt75Qoki4GZw==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (36.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 557ms (Views: 414.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-01-04 23:27:18 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5ckQKSsEV0WmLPJMNyh7UCvNbc0OKuP8Di6FQSrPNnM9TRFveybBAIXEognDMJOim+bDq87c+GO3TJjRrmLVEg==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5ckQKSsEV0WmLPJMNyh7UCvNbc0OKuP8Di6FQSrPNnM9TRFveybBAIXEognDMJOim+bDq87c+GO3TJjRrmLVEg==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (110.0ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 982ms (Views: 830.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-01-04 23:27:48 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2aev43IcOFbgLcyC/Z9JEl6k0IoFMbvwVQfAvtU51IUBI66lIj6uE8PFnMcJh6Hg7o9+7MXHoG/sZd0uUZQ35A==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 1.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2aev43IcOFbgLcyC/Z9JEl6k0IoFMbvwVQfAvtU51IUBI66lIj6uE8PFnMcJh6Hg7o9+7MXHoG/sZd0uUZQ35A==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 702ms (Views: 564.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-01-04 23:28:06 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qrlIZDLsQ3vTuz97fyzx8a5pa6RWXormsPnXA4DLWN1yPUkiYs7VPvBTbz6LNBkDHkLFwpaokXkJm8qTBGa7vA==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 47ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qrlIZDLsQ3vTuz97fyzx8a5pa6RWXormsPnXA4DLWN1yPUkiYs7VPvBTbz6LNBkDHkLFwpaokXkJm8qTBGa7vA==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (31.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 552ms (Views: 416.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-01-04 23:28:22 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XpzW4WXCtyL5uuGdYGxDhyqirMvocCNY0m+KhR47QpqGGNenNeAhZ9pSsdiUdKt1mokCrSiGOMdrDZcVmpah+w==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 1.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XpzW4WXCtyL5uuGdYGxDhyqirMvocCNY0m+KhR47QpqGGNenNeAhZ9pSsdiUdKt1mokCrSiGOMdrDZcVmpah+w==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (31.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 576ms (Views: 436.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-01-04 23:29:02 -0500
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:CoursesController> at C:/Users/IBM_ADMIN/Documents/GitHub/UofTCourseInfo/app/controllers/courses_controller.rb:2)
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (20.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE ((LOWER(courses.code) LIKE 'csc321%' OR LOWER(courses.title) LIKE 'csc321%' OR LOWER(courses.description) LIKE 'csc321%')) ORDER BY courses.code asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered courses/_list.html.erb (22.0ms)
+  Rendered courses/index.html.erb within layouts/application (99.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 451ms (Views: 401.4ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/courses?filterrific%5Breset_filterrific%5D=true" for 127.0.0.1 at 2017-01-04 23:32:30 -0500
+Processing by CoursesController#index as HTML
+  Parameters: {"filterrific"=>{"reset_filterrific"=>"true"}}
+Redirected to http://localhost:3000/courses
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-01-04 23:32:30 -0500
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (17.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY courses.code asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered courses/_list.html.erb (28.0ms)
+  Rendered courses/index.html.erb within layouts/application (68.0ms)
+Started GET "/courses?filterrific%5Breset_filterrific%5D=true" for 127.0.0.1 at 2017-01-04 23:32:30 -0500
+Processing by CoursesController#index as HTML
+  Parameters: {"filterrific"=>{"reset_filterrific"=>"true"}}
+Redirected to http://localhost:3000/courses
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+  Rendered layouts/_shim.html.erb (0.0ms)
+Started GET "/courses" for 127.0.0.1 at 2017-01-04 23:32:31 -0500
+Processing by CoursesController#index as HTML
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 579ms (Views: 521.3ms | ActiveRecord: 17.0ms)
+
+
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (27.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY courses.code asc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered courses/_list.html.erb (76.0ms)
+  Rendered courses/index.html.erb within layouts/application (232.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 904ms (Views: 812.5ms | ActiveRecord: 27.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateComments (20161231172152)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id_and_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id_and_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP INDEX "index_comments_on_user_id_and_course_id"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20161231172152"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id_and_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id_and_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRatings (20161228202836)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id_and_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id_and_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP INDEX "index_ratings_on_user_id_and_course_id"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ratings"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20161228202836"]]
+  [1m[35m (530.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/courses/3" for 127.0.0.1 at 2017-01-05 00:36:19 -0500
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:CoursesController> at C:/Users/IBM_ADMIN/Documents/GitHub/UofTCourseInfo/app/controllers/courses_controller.rb:2)
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (349.0ms)
+Completed 500 Internal Server Error in 638ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (Could not find table 'ratings'):
+    13: </p>
+    14: 
+    15: <h2> Rate course:</h2>
+    16: <%= form_for([@course, @course.ratings.build]) do |f| %>
+    17:   <p>
+    18:     <%= f.select(:value, 1, 2, 3, 4, 5) %>
+    19:   </p>
+  
+app/views/courses/show.html.erb:16:in `_app_views_courses_show_html_erb__1558120784_142348220'
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2075.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRatings (20161228202836)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "course_id" integer, "value" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "index_ratings_on_user_id" ON "ratings" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_ratings_on_course_id" ON "ratings" ("course_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_ratings_on_user_id_and_course_id" ON "ratings" ("user_id", "course_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161228202836"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20161231172152)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text DEFAULT '' NOT NULL, "user_id" integer, "course_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_course_id" ON "comments" ("course_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_comments_on_user_id_and_course_id" ON "comments" ("user_id", "course_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161231172152"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id_and_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id_and_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id_and_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id_and_course_id' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_course_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ratings_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/courses/3" for 127.0.0.1 at 2017-01-05 00:37:37 -0500
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:CoursesController> at C:/Users/IBM_ADMIN/Documents/GitHub/UofTCourseInfo/app/controllers/courses_controller.rb:2)
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (3467.2ms)
+Completed 500 Internal Server Error in 3739ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 6, expected 1..4)):
+    15: <h2> Rate course:</h2>
+    16: <%= form_for([@course, @course.ratings.build]) do |f| %>
+    17:   <p>
+    18:     <%= f.select(:value, 1, 2, 3, 4, 5) %>
+    19:   </p>
+    20:   <p>
+    21:     <%= f.submit %>
+  
+app/views/courses/show.html.erb:18:in `block in _app_views_courses_show_html_erb__1558120784_112002180'
+app/views/courses/show.html.erb:16:in `_app_views_courses_show_html_erb__1558120784_112002180'
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2169.1ms)
+Started GET "/courses/3" for 127.0.0.1 at 2017-01-05 00:40:54 -0500
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (33.0ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 1605ms (Views: 1572.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2017-01-05 00:47:12 -0500
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:CoursesController> at C:/Users/IBM_ADMIN/Documents/GitHub/UofTCourseInfo/app/controllers/courses_controller.rb:2)
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (44.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 899ms (Views: 852.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/courses/3/comments" for 127.0.0.1 at 2017-01-05 00:47:25 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Odglj1lEh673SBEUZ9SD0KC49mpqx2cdlqIKzybKy/vhXCTJCWYR69SgQVGTzGsiEJNYDKoxfIIvwBdfomcomg==", "comment"=>{"body"=>"Sample Comment"}, "commit"=>"Submit", "course_id"=>"3"}
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-05 00:47:25 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (110.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 945ms (Views: 925.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-01-05 00:47:32 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NJWMjMsBVmXgEEAnoGZu0G4rajysrr/uRrP9KG9Yj2LsEY3KmyPAIMP4EGJUfoYi3gDEWmxYpHH/0eC46/VsAw==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NJWMjMsBVmXgEEAnoGZu0G4rajysrr/uRrP9KG9Yj2LsEY3KmyPAIMP4EGJUfoYi3gDEWmxYpHH/0eC46/VsAw==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.0ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 579ms (Views: 434.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-05 00:51:14 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.0ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 467ms (Views: 454.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/courses/3/comments" for 127.0.0.1 at 2017-01-05 00:51:18 -0500
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:CommentsController> at C:/Users/IBM_ADMIN/Documents/GitHub/UofTCourseInfo/app/controllers/comments_controller.rb:2)
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Odglj1lEh673SBEUZ9SD0KC49mpqx2cdlqIKzybKy/vhXCTJCWYR69SgQVGTzGsiEJNYDKoxfIIvwBdfomcomg==", "comment"=>{"body"=>"Sample Comment"}, "commit"=>"Submit", "course_id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/3
+Completed 302 Found in 117ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2017-01-05 00:51:18 -0500
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:CoursesController> at C:/Users/IBM_ADMIN/Documents/GitHub/UofTCourseInfo/app/controllers/courses_controller.rb:2)
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (24.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 406ms (Views: 375.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2017-01-05 00:56:46 -0500
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:CoursesController> at C:/Users/IBM_ADMIN/Documents/GitHub/UofTCourseInfo/app/controllers/courses_controller.rb:2)
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `ratings' for #<Class:0x00000011842608>):
+  
+app/controllers/courses_controller.rb:46:in `show'
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2106.1ms)
+Started GET "/courses/3" for 127.0.0.1 at 2017-01-05 00:58:44 -0500
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:CoursesController> at C:/Users/IBM_ADMIN/Documents/GitHub/UofTCourseInfo/app/controllers/courses_controller.rb:2)
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 2.0ms)
+
+
+  
+SyntaxError (C:/Users/IBM_ADMIN/Documents/GitHub/UofTCourseInfo/app/views/courses/show.html.erb:58: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/courses/show.html.erb:58: syntax error, unexpected keyword_ensure, expecting end-of-input
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1975.1ms)
+Started GET "/courses/3" for 127.0.0.1 at 2017-01-05 00:59:20 -0500
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."course_id" = ?[0m  [["course_id", 3]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT AVG("ratings"."value") FROM "ratings" WHERE "ratings"."course_id" = ?[0m  [["course_id", 3]]
+  Rendered courses/show.html.erb within layouts/application (169.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 814ms (Views: 778.5ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/courses/3/ratings" for 127.0.0.1 at 2017-01-05 00:59:31 -0500
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for RatingsController):
+  
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.0ms)
+Started GET "/courses/3/ratings" for 127.0.0.1 at 2017-01-05 01:00:27 -0500
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:RatingsController> at C:/Users/IBM_ADMIN/Documents/GitHub/UofTCourseInfo/app/controllers/ratings_controller.rb:2)
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for RatingsController):
+  
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.0ms)
+Started POST "/courses/3/ratings" for 127.0.0.1 at 2017-01-05 01:00:53 -0500
+Processing by RatingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YlvdD66WBhHQMOSzcBsQIVk8o8F9OLCGEcuXrj4gH8+639xJ/rSQVPPYtPaEA/jT6RcNp73OqxmoqYo+uo38rg==", "rating"=>{"value"=>"5"}, "commit"=>"Submit", "course_id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/3
+Completed 302 Found in 46ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2017-01-05 01:00:53 -0500
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:CoursesController> at C:/Users/IBM_ADMIN/Documents/GitHub/UofTCourseInfo/app/controllers/courses_controller.rb:2)
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."course_id" = ?[0m  [["course_id", 3]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("ratings"."value") FROM "ratings" WHERE "ratings"."course_id" = ?[0m  [["course_id", 3]]
+  Rendered courses/show.html.erb within layouts/application (28.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 782ms (Views: 750.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2017-01-05 01:03:49 -0500
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."course_id" = ?[0m  [["course_id", 3]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("ratings"."value") FROM "ratings" WHERE "ratings"."course_id" = ?[0m  [["course_id", 3]]
+  Rendered courses/show.html.erb within layouts/application (47.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 447ms (Views: 398.6ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/courses/3/ratings" for 127.0.0.1 at 2017-01-05 01:03:51 -0500
+Processing by RatingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V7AtmpO2DwUBFvZvz3CLfpUGtCNw5sdMYoqNF0aRxYyPNCzcw5SZQCL+pio7aGOMJS0aRbAQ3NPb6JCHwjwm7Q==", "rating"=>{"value"=>"1"}, "commit"=>"Submit", "course_id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/ratings_controller.rb:5:in `create'
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2177.1ms)

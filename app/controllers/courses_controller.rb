@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-	skip_before_filter :authenticate_user!, :only => [:show, :index, :fetch]
+	skip_before_action :authenticate_user!, :only => [:show, :index, :fetch]
 	before_action :redirect_to_index, only: [:create, :new, :edit, :update, :destroy]
 
 	def index

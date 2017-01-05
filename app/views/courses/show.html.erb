@@ -11,5 +11,46 @@
   <strong>Description:</strong>
   <%= @course.description %>
 </p>
+
+<h2>Comments</h2>
+<% @course.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.user_id %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<h2>Ratings</h2>
+  <p>
+    <%= @course.ratings.average(:value) %>
+  </p>
+
+
+<h2> Rate course:</h2>
+<%= form_for([@course, @course.ratings.build]) do |f| %>
+  <p>
+    <%= f.select(:value, [['1',1],['2',2],['3',3],['4',4],['5',5]]) %>
+  </p>
+  <p>
+    <%= f.submit "Submit"%>
+  </p>
+<% end %>
+
+<h2> Add a comment:</h2>
+<%= form_for([@course, @course.comments.build]) do |f| %>
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Submit"%>
+  </p>
+<% end %>
+
+
 <td><!--%= link_to 'Edit', edit_course_path(@course) %--></td>
 <%= link_to 'Back', courses_path %>

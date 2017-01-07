@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161231172152) do
+ActiveRecord::Schema.define(version: 20170107150819) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body",       default: "", null: false
@@ -57,6 +57,11 @@ ActiveRecord::Schema.define(version: 20161231172152) do
     t.datetime "updated_at",                          null: false
     t.string   "provider"
     t.string   "uid"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "username"
+    t.text     "about"
+    t.date     "birthdate"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

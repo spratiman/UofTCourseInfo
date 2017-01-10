@@ -1,0 +1,23 @@
+<% provide(:title, "Welcome") %>
+<section class="masthead">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-10 col-lg-6 prefix-lg-0 suffix-lg-2 prefix-md-1 suffix-md-1">
+				<h1 class="masthead__title">Course Selection,<br><span class="primary-text">the way it should be.</span></h1>
+				<p class="masthead__description">Choosing courses at U of T can be a little stressful. OAK provides a simple and convenient place to find out what courses your friends are taking and choose the courses you want.</p>
+			</div>
+			<div class="col-sm-12 col-md-8 col-lg-4 prefix-md-2 suffix-md-2 prefix-lg-0 suffix-lg-0 login-form">
+				<%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path, :class => 'btn btn--fill btn--facebook' %>
+				<span class="text-divider">OR</span>
+				<%= form_for(:user, :url => session_path(:user)) do |f| %>
+					<%= f.label :email, :class => 'login-form__label' %>
+					<%= f.email_field :email, autofocus: true, :class => 'login-form__input' %>
+					<%= f.label :password, :class => 'login-form__label' %>
+					<%= f.password_field :password, autocomplete: "off", :class => 'login-form__input' %>
+  					<%= link_to "Forgot your password?", new_password_path(:user), :class => 'login-form__link' %>
+					<%= f.submit "Login", :class => ['btn','btn--fill', 'btn--primary'] %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</section>

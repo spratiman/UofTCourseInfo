@@ -1,10 +1,23 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "UofTCourseInfo", '#', id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   '#' %></li>
-      </ul>
-    </nav>
-  </div>
+<header class="navigation-bar navigation-bar--main <%= 'site-header' if !user_signed_in? %>">
+	<div class="container">
+		<% if user_signed_in? %>
+			<%= link_to(:root, class:"navigation-bar__logo") do %>
+				<%= image_tag "logo.png" %>
+			<% end %>
+		<% else %>
+			<%= link_to(:root, class:"navigation-bar__logo") do %>
+				<%= image_tag "logo.png" %>
+			<% end %>
+		<% end -%>
+		<nav class="navigation-bar__nav navigation-bar__nav--main">
+			<ul class="inline-list">
+				<li class="inline-list__item"><a href="">Explore</a></li>
+				<% if user_signed_in? %>
+					<!-- Put profile code here -->
+				<% else %>
+				<li class="inline-list__item"><%= link_to "Sign up", new_user_registration_path %></li>
+				<% end -%>
+			</ul>
+		</nav>
+	</div>
 </header>

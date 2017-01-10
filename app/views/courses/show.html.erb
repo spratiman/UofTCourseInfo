@@ -1,0 +1,85 @@
+<p>
+  <strong>Code:</strong>
+  <%= @course.code %>
+</p>
+ 
+<p>
+  <strong>Title:</strong>
+  <%= @course.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @course.description %>
+</p>
+
+<h2>Comments</h2>
+<% @course.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.user_id %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+  <td><% if current_user.id == comment.user_id %>
+    <%= link_to 'Edit', edit_course_comment_path(@course, comment) %></td>
+  <% end %>
+<% end %>
+
+<h2>Ratings</h2>
+  <p>
+    <%= @course.ratings.average(:value) %>
+  </p>
+
+
+<h2> Rate course:</h2>
+<% if defined?(@rating) && @rating.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@rating.errors.count, "error") %> prohibited
+        this course from being saved:
+      </h2>
+      <ul>
+        <% @rating.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= form_for([@course, @course.ratings.build]) do |f| %>
+  <p>
+    <%= f.select(:value, [1, 2, 3, 4, 5]) %>
+  </p>
+  <p>
+    <%= f.submit "Submit"%>
+  </p>
+<% end %>
+
+<h2> Add a comment:</h2>
+<% if defined?(@comment) && @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@comment.errors.count, "error") %> prohibited
+        this course from being saved:
+      </h2>
+      <ul>
+        <% @comment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= form_for([@course, @course.comments.build]) do |f| %>
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Submit"%>
+  </p>
+<% end %>
+
+
+<td><!--%= link_to 'Edit', edit_course_path(@course) %--></td>
+<%= link_to 'Back', courses_path %>

@@ -1,0 +1,18 @@
+<div id="filterrific_results">
+<table>
+    <tr>
+      <th><%= filterrific_sorting_link(@filterrific, :code) %></th>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+    <% courses.each do |course| %>
+      <tr>
+        <td><%= link_to(course.code, course_path(course)) %></td>
+        <td><%= link_to(course.title, course_path(course)) %></td>
+        <td><%= course.description %></td>
+        <td><%= link_to('Add', :action => :add )%></td>
+        <td><%= link_to 'Details', course_path(course) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

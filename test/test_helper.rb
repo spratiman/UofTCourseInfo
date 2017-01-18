@@ -8,5 +8,25 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  # Returns true if a test user is logged in
+  def is_logged_in?
+    !session[:user_id].nil?
+  end
+
+  # Log in as a particular user
+  def log_in_as(user)
+    session[:user_id] = user.id
+  end
+end
+
+#Inside intgreation test, session can't be manipulated directly, but can post to the sessions path, which leads to the log_in_as method
+class ActionDispatch::IntegrationTest
+#Lets using code from a controller test in an integreation without making any change to the login method
+
+  #Log in as a particular user
+  def log_in_as(user, password: 'password', remember_me: '1')
+    post login_path, params: { session: {email: user.email,
+                                         password: passoword,
+                                         remember_me: remember_me}}
+  end
 end

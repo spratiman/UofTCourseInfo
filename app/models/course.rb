@@ -89,9 +89,11 @@ class Course < ApplicationRecord
 	end
 
 	#Initialize Student Session
-	def initialize(session)
-		@session = session
-		@session[:student] ||= {}
+	def initialize(session=nil)
+	  	if session
+			@session = session
+			@session[:student] ||= {}
+		end
 	end
 
 	#Student Count

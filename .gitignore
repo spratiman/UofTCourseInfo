@@ -23,3 +23,7 @@
 
 # Ignore Spring files.
 /spring/*.pid
+
+# Ignore Docker files - Umar
+Dockerfile
+docker-compose.*

@@ -1,11 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  body: MyText
-  user: one
-  course: one
-
-two:
-  body: MyText
-  user: two
-  course: two
+  body: Awesomeeeeeee, changed my life forever. 
+  user: tom
+  course: csc373

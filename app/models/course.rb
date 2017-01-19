@@ -1,6 +1,7 @@
 class Course < ApplicationRecord
 	belongs_to :user
-	validates :code, uniqueness: true
+	validates :code, uniqueness: true, presence: true
+	validates :title, presence: true
 	has_many :comments
 	has_many :ratings
 

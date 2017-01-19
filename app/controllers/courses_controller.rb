@@ -78,17 +78,17 @@ class CoursesController < ApplicationController
 		courses = session[:student][:courses]
 
 		#If exists, add new, else create a new variable
-		if (products && products != {})
+		if (courses && courses != {})
 			session[:student][:courses] << params[:id]
 		else
 			session[:student][:courses] = Array(params[:id])
 		end
 
 		#Handle the request
-		respond_to do |format|
-			format.json {render json: student_session.build_json}
-			format.html {redirect_to cart_index_path}
-		end
+		# respond_to do |format|
+		# 	format.json {render json: student_session.build_json}
+		# 	format.html {redirect_to student_index_path}
+		# end
 	end
 
 	#Delete

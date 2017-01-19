@@ -1,0 +1,76 @@
+html,
+body {
+	font-family: 'Proxima Nova', Arial, sans-serif;
+	font-weight: 400;
+	font-size: $base;
+	line-height: ($line-height/$base);
+	color: #333;
+
+	@media (max-width: $screen-md-break) {
+		font-size: 16px;
+		line-height: ($line-height/16px);
+	}
+}
+
+p {
+	margin-top: $line-height;
+	margin-bottom: $line-height;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	vertical-align: text-bottom;
+	font-weight: 700;
+	margin-top: $line-height;
+	margin-bottom: $line-height;
+
+	& + * {
+		margin-top: 0;
+	}
+}
+
+h1 {
+	font-size: 3.0rem;
+	margin-bottom: ($line-height - 1.5 * $base);
+
+	@media (max-width: $screen-md-break) {
+		font-size: 2.0rem;
+		margin-bottom: ($line-height - 1.5 * 16px);
+	}
+}
+
+h2 {
+	font-size: 2.0rem;
+	margin-bottom: ($line-height - $base);
+
+	@media (max-width: $screen-md-break) {
+		font-size: 1.5rem;
+		margin-bottom: ($line-height - 0.75 * 16px);
+	}
+}
+
+h3,
+h4 {
+	font-size: 1.0rem;
+	margin-bottom: 0;
+}
+
+a {
+	color: #489AFF;
+}
+
+small,
+.small {
+	font-size: ($base * 0.75);
+	line-height: ($line-height / $base * 0.75);
+
+	@media (max-width: $screen-md-break) {
+		line-height: ($line-height / 16px * 0.75);
+	}
+}
+
+.upper {
+	text-transform: uppercase;
+}

@@ -1,5 +1,6 @@
+<% provide(:title, "Explore Courses") %>
 <div class="container">
-<h1>Courses</h1>
+<h1>Explore Courses</h1>
 
 <%#
   Filterrific adds the `form_for_filterrific` view helper:
@@ -29,10 +30,11 @@
       reset_filterrific_url,
     ) %>
   </div>
-  <%# add an automated spinner to your form when the list is refreshed %>
-  <%= render_filterrific_spinner %>
 <% end %>
 
+<h2>Search Results</h2>
+<%# add an automated spinner to your form when the list is refreshed %>
+<%= render_filterrific_spinner %>
 <%= render(
   partial: 'courses/list',
   locals: { courses: @courses }

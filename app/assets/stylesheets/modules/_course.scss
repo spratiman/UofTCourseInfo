@@ -1,0 +1,29 @@
+.course {
+	padding: 20px;
+	background-color: white;
+	border-radius: 2px;
+	box-shadow: 0 4px 6px hsla(0, 0, 51, 0.16);
+	border: 1px solid $light-gray;
+
+	@include e('code') {
+		font-size: 36px;
+		font-weight: 300;
+		color: $medium-gray;
+	}
+
+	@include e('info') {
+
+		h3 {
+			margin-top: 0;
+			font-size: 24px;
+			line-height: 1.2;
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+
+	@include e('actions') {
+		float: right;
+	}
+}

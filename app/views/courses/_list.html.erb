@@ -1,19 +1,19 @@
-<div id="filterrific_results">
-<h2>Search Results</h2>
-<table>
-    <tr>
-      <th><%= filterrific_sorting_link(@filterrific, :code) %></th>
-      <th>Title</th>
-      <th>Description</th>
-    </tr>
-    <% courses.each do |course| %>
-      <tr>
-        <td><%= link_to(course.code, course_path(course)) %></td>
-        <td><%= link_to(course.title, course_path(course)) %></td>
-        <td><%= course.description %></td>
-        <td><%= link_to('Add', :action => :add )%></td>
-        <td><%= link_to 'Details', course_path(course) %></td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+<section id="filterrific_results">
+  <% courses.in_groups_of(3, false) do |slice| %>
+    <div class="row">
+      <% slice.each do |course| %>
+        <article class="col-md-4 course">
+          <span class="course__code"><%= course.code %></span>
+          <div class="course__info">
+            <h3><%= link_to course.title, course_path(course) %></h3>
+            <span class="TODO">Get ratings and % useful</span>
+          </div>
+          <div class="course__actions">
+            <%= link_to('Add', :action => :add )%>
+            <%= link_to 'Details', course_path(course) %>
+          </div>
+        </article>
+      <% end -%>
+    </div>
+  <% end %>
+</section>

@@ -11,7 +11,7 @@
 		<% end -%>
 		<nav class="navigation-bar__nav navigation-bar__nav--main">
 			<ul class="inline-list">
-				<li class="inline-list__item"><a href="">Explore</a></li>
+				<li class="inline-list__item"><%= link_to "Explore", courses_path %></li>
 				<% if user_signed_in? %>
 					<!-- Put profile code here -->
 				<% else %>

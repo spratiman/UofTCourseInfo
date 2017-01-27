@@ -12,21 +12,7 @@
   <%= @course.description %>
 </p>
 
-<h2>Comments</h2>
-<% @course.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.user_id %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-  <td><% if current_user.id == comment.user_id %>
-    <%= link_to 'Edit', edit_course_comment_path(@course, comment) %></td>
-  <% end %>
-<% end %>
+<%= render :template => 'comments/index' %>
 
 <h2>Ratings</h2>
   <p>

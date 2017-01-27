@@ -1,0 +1,25 @@
+<!--h1>Showing comment</h1-->
+<p>
+  <strong>Course_id:</strong>
+  <%= @comment.course_id %>
+</p>
+ 
+<p>
+  <strong>User_id:</strong>
+  <%= @comment.user_id %>
+</p>
+<p>
+  <strong>Body:</strong>
+  <%= @comment.body %>
+</p>
+<p>
+  <strong>Created at:</strong>
+  <%= @comment.created_at %>
+</p>
+<p>
+  <strong>Updated at:</strong>
+  <%= @comment.updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_course_comment_path(@course)%>
+<%= link_to 'Back', course_comments_path %>

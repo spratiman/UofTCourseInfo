@@ -4,4 +4,5 @@ class Rating < ApplicationRecord
   validates :value, :inclusion => 1..5, presence: true, numericality: :integer
   validates :course_id, presence: true
   validates :user_id, presence: true
+  attr_readonly [:course_id, :user_id]
 end

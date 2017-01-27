@@ -2,7 +2,17 @@ class CommentsController < ApplicationController
   def create
     @course = Course.find(params[:course_id])
 	  @comment = @course.comments.create(body: params[:comment][:body], course_id: :course_id, user_id: current_user.id)
-	  redirect_to course_path(@course)
+
+    if @comment.save
+	    redirect_to course_path(@course)
+    else
+      render 'new'
+    end
+  end
+
+  def new
+    @course = Course.find(params[:course_id])
+    @comment = Comment.new
   end
 
   def edit
@@ -26,5 +36,15 @@ class CommentsController < ApplicationController
     @comment = @course.comments.find(params[:comment][:id])
     @comment.destroy
     redirect_to course_path(@course)
+  end
+
+  def show
+    @course = Course.find(params[:course_id])
+    @comment = Comment.find(params[:id])
+  end
+
+  def index
+    @course = Course.find(params[:course_id])
+    @comments = @course.comments
   end
 end

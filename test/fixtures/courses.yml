@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 csc373:
-  code: csc373
+  code: abc373
   title: Algorithm Design, Analysis & Complexity
   description: Standard algorithm design techniques where students will be expected to show good design principles and adequate skills at reasoning about the correctness and complexity of algorithms.
 
 csc473:
-  code: csc473
+  code: abc473
   title: Advanced Algorithm Design
   description: Advanced algorithm design techniques to blow your mind if not blown by now.

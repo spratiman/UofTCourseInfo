@@ -4,6 +4,7 @@ class Course < ApplicationRecord
 	validates :title, presence: true
 	has_many :comments
 	has_many :ratings
+	
 
 	filterrific :default_filter_params => { :sorted_by => 'code_asc' },
 			:available_filters => %w[

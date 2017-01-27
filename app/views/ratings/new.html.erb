@@ -1,4 +1,21 @@
-
-<%= render 'form' %>
-
-<%= link_to 'Back', course_ratings_path %>
+<% if defined?(@rating) && @rating.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@rating.errors.count, "error") %> prohibited
+        this course from being saved:
+      </h2>
+      <ul>
+        <% @rating.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= form_for([@course, @course.ratings.build]) do |f| %>
+  <p>
+    <%= f.select(:value, [1, 2, 3, 4, 5]) %>
+  </p>
+  <p>
+    <%= f.submit "Submit"%>
+  </p>
+<% end %>

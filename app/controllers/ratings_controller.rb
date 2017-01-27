@@ -44,6 +44,9 @@ class RatingsController < ApplicationController
     redirect_to course_path(@course)
   end
 
+  def sum 
+  end
+
   def show
     @course = Course.find(params[:course_id])
     @rating = Rating.find(params[:id])

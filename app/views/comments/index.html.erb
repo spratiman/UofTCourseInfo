@@ -1,4 +1,5 @@
-<h2>Comments</h2>
+
+<% count = 0 %>
 <% @course.comments.each do |comment| %>
   <p>
     <strong>Commenter:</strong>
@@ -20,4 +21,6 @@
   <td><% if current_user.id == comment.user_id %>
     <%= link_to 'Edit', edit_course_comment_path(@course, comment) %></td>
   <% end %>
+  <% count = count + 1%>
+  <% break if defined?(num) && count >= num %>
 <% end %>

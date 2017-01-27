@@ -1,4 +1,23 @@
 <!--h1>Adding Comment</h1-->
 
-<%= render 'form' %>
-<%= link_to 'Back', course_comments_path %>
+<% if defined?(@comment) && @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@comment.errors.count, "error") %> prohibited
+        this course from being saved:
+      </h2>
+      <ul>
+        <% @comment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= form_for([@course, @course.comments.build]) do |f| %>
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Submit"%>
+  </p>
+<% end %>

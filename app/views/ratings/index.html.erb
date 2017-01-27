@@ -1,0 +1,23 @@
+<h2>Ratings</h2>
+<% @course.ratings.each do |rating| %>
+  <p>
+    <strong>Rater:</strong>
+    <%= rating.user_id %>
+  </p>
+ 
+  <p>
+    <strong>Value:</strong>
+    <%= rating.value %>
+  </p>
+  <p>
+    <strong>Created_at:</strong>
+    <%= rating.created_at %>
+  </p>
+  <p>
+    <strong>Updated_at:</strong>
+    <%= rating.updated_at %>
+  </p>
+  <td><% if current_user.id == rating.user_id %>
+    <%= link_to 'Edit', edit_course_rating_path(@course, rating) %></td>
+  <% end %>
+<% end %>

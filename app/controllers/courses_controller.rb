@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-	skip_before_action :authenticate_user!, :only => [:show, :index, :fetch]
+	#skip_before_action :authenticate_user!, :only => [:show, :index, :fetch]
 	before_action :redirect_to_index, only: [:create, :new, :edit, :update, :destroy]
 
 	def index
@@ -74,14 +74,14 @@ class CoursesController < ApplicationController
 
 	#Add
 	def add
-		session[:student] ||={}
+		user_session[:student] ||={}
 		courses = session[:student][:courses]
 
 		#If exists, add new, else create a new variable
 		if (courses && courses != {})
-			session[:student][:courses] << params[:id]
+			user_session[:student][:courses] <<  params[:course_id]
 		else
-			session[:student][:courses] = Array(params[:id])
+			user_session[:student][:courses] = Array(params[:course_id])
 		end
 
 		#Handle the request
@@ -89,7 +89,9 @@ class CoursesController < ApplicationController
 		# 	format.json {render json: student_session.build_json}
 		# 	format.html {redirect_to student_index_path}
 		# end
+	binding.pry
 	end
+
 
 	#Delete
 	def delete
@@ -123,6 +125,6 @@ class CoursesController < ApplicationController
 		end
 
 		def course_params
-			params.require(:course).permit(:code, :name, :description)
+			params.require(:course).permit(:code, :name, :description, :course_id)
 		end
 end

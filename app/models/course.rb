@@ -1,10 +1,10 @@
 class Course < ApplicationRecord
-	belongs_to :user
 	validates :code, uniqueness: true, presence: true
 	validates :title, presence: true
 	has_many :comments
 	has_many :ratings
-	
+	has_many :users
+
 
 	filterrific :default_filter_params => { :sorted_by => 'code_asc' },
 			:available_filters => %w[
@@ -91,15 +91,15 @@ class Course < ApplicationRecord
 	end
 
 	#Initialize Student Session
-	def initialize(session=nil)
-	  	if session
-			@session = session
+	def self.initialize(user_session=nil)
+	  	if user_session
+			@session = user_session
 			@session[:student] ||= {}
 		end
 	end
 
 	#Student Count
-	def student_count
+	def self.student_count
 		if (@session[:student][:courses] && @session[:student][:courses] != {})
 				@session[:student][:courses].count
 		else
@@ -108,7 +108,7 @@ class Course < ApplicationRecord
 	end
 
 	#Student Contents
-	def student_contents
+	def self.student_contents
 		courses = @session[:student][:courses]
 
 		if (courses && courses != {})
@@ -131,8 +131,8 @@ class Course < ApplicationRecord
 	end
 
 	#Build JSON Requests
-	def build_json
-		session = @session[:student][:courses]
+	def self.build_json
+		user_session = @session[:student][:courses]
 		json = {:qty => self.student_count, :items => Hash[session.uniq.map { |i| [i, session.count(i)]  }]}
 		return json
 	end

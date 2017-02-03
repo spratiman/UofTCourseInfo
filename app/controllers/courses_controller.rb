@@ -74,14 +74,17 @@ class CoursesController < ApplicationController
 
 	#Add
 	def add
+		#Course.initialize
 		user_session[:student] ||={}
-		courses = session[:student][:courses]
+		courses = user_session[:student][:courses]
 
 		#If exists, add new, else create a new variable
 		if (courses && courses != {})
 			user_session[:student][:courses] <<  params[:course_id]
+			#Course.student_count
 		else
 			user_session[:student][:courses] = Array(params[:course_id])
+			#Course.student_count
 		end
 
 		#Handle the request
@@ -89,7 +92,6 @@ class CoursesController < ApplicationController
 		# 	format.json {render json: student_session.build_json}
 		# 	format.html {redirect_to student_index_path}
 		# end
-	binding.pry
 	end
 
 

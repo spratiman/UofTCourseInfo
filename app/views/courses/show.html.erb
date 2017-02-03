@@ -1,14 +1,14 @@
-
-<h1><span><%= @course.code %>:</span> <%= @course.title %></h1>
+<% provide(:title, @course.code+": "+@course.title) %>
 
 <div class="container">
+  <h1><span><%= @course.code %>:</span> <%= @course.title %></h1>
   <h2>Ratings</h2>
   <p>
     <%= @course.ratings.average(:value) %>
   </p>
   
   
-  <h2> Rate course:</h2>
+  <h2>Rate course:</h2>
   <% if defined?(@rating) && @rating.errors.any? %>
       <div id="error_explanation">
         <h2>
@@ -35,17 +35,19 @@
 
 <div class="container">
 
-  <div class="col-md-8">
-    <h2>Description</h2>
-    <p>
-      <%= @course.description %>
-    </p>
-  </div>
-
-  <div class="col-md-4">
-    <h3>Distribution Requirement Status</h3>
-    <p></p>
-    <h3>Breadth Requirements</h3>
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <h2>Description</h2>
+      <p>
+        <%= @course.description %>
+      </p>
+    </div>
+    
+    <div class="col-12 col-md-4">
+      <h3>Distribution Requirement Status</h3>
+      <p></p>
+      <h3>Breadth Requirements</h3>
+    </div>
   </div>
 
 </div>

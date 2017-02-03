@@ -78,7 +78,7 @@ class CoursesController < ApplicationController
 		courses = session[:student][:courses]
 
 		#If exists, add new, else create a new variable
-		if (products && products != {})
+		if (courses && courses != {})
 			session[:student][:courses] << params[:id]
 		else
 			session[:student][:courses] = Array(params[:id])

@@ -35,7 +35,7 @@ h1 {
 	font-size: 3.0rem;
 	margin-bottom: ($line-height - 1.5 * $base);
 
-	@media (max-width: $screen-md-break) {
+	@media (max-width: $screen-sm-break) {
 		font-size: 2.0rem;
 		margin-bottom: ($line-height - 1.5 * 16px);
 	}
@@ -45,7 +45,7 @@ h2 {
 	font-size: 2.0rem;
 	margin-bottom: ($line-height - $base);
 
-	@media (max-width: $screen-md-break) {
+	@media (max-width: $screen-sm-break) {
 		font-size: 1.5rem;
 		margin-bottom: ($line-height - 0.75 * 16px);
 	}
@@ -66,7 +66,7 @@ small,
 	font-size: ($base * 0.75);
 	line-height: ($line-height / $base * 0.75);
 
-	@media (max-width: $screen-md-break) {
+	@media (max-width: $screen-sm-break) {
 		line-height: ($line-height / 16px * 0.75);
 	}
 }

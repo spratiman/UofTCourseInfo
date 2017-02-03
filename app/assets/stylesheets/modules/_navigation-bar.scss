@@ -12,6 +12,7 @@
 		a {
 			color: white;
 			text-decoration: none;
+			vertical-align: middle;
 		}
 
 	}
@@ -41,7 +42,6 @@
 	}
 
 	@include e('logo') {
-		float: left;
 		height: 1.0em;
 	}
 }

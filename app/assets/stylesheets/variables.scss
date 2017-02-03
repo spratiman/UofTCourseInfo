@@ -12,12 +12,10 @@ $line-height: 28px;
 
 $num-columns: 12;
 
-$gutter-width-sm: 5px;
-$gutter-width-md: 10px;
-$gutter-width-lg: 20px;
+$gutter-width-sm: 1%;
+$gutter-width-md: 1.5%;
+$gutter-width-lg: 2%;
 
-$screen-sm-break: 400px;
-$screen-md-break: 600px;
-$screen-lg-break: 1300px;
-
-$grid-spacing: 2%;
+$screen-sm-break: 36em;
+$screen-md-break: 64em;
+$screen-lg-break: 75em;

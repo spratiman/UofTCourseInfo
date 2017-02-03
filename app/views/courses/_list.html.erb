@@ -1,19 +1,18 @@
 <section id="filterrific_results">
-  <% courses.in_groups_of(3, false) do |slice| %>
     <div class="row">
-      <% slice.each do |course| %>
-        <article class="col-md-4 course">
-          <span class="course__code"><%= course.code %></span>
-          <div class="course__info">
-            <h3><%= link_to course.title, course_path(course) %></h3>
-            <span class="TODO">Get ratings and % useful</span>
-          </div>
-          <div class="course__actions">
-            <%= link_to('Add', :action => :add )%>
-            <%= link_to 'Details', course_path(course) %>
-          </div>
-        </article>
+      <% courses.each do |course| %>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="course">
+            <span class="course__code"><%= course.code %></span>
+            <div class="course__info">
+              <h3><%= link_to course.title, course_path(course) %></h3>
+            </div>
+            <div class="course__actions">
+              <%= link_to 'Details', course_path(course), :class => "btn btn--small"  %>
+              <%= link_to "Add", { :action => :add}, :class => "btn btn--primary btn--small"  %>
+            </div>
+          </article>
+        </div>
       <% end -%>
     </div>
-  <% end %>
 </section>

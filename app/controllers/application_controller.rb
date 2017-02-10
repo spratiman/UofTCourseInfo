@@ -12,7 +12,12 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in
-    user_session["id"] = current_user.id
-    cookies[:login] = { :value => current_user.email, :expires => Time.now + 2.weeks}
+    if user_session
+      user_session["id"] = current_user.id
+      if cookies
+        cookies[:login] = { :value => current_user.email, :expires => Time.now + 2.weeks}
+      end
+    end
+
   end
 end

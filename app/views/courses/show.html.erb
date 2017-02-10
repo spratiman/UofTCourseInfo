@@ -17,9 +17,23 @@
 <%= link_to 'Show all', course_comments_path(@course) %>
 
 <h2>Ratings (<%= @course.ratings.count() %>)</h2>
+<h3>Overall</h3>
   <p>
-    <%= @course.ratings.average(:value) %>
+    <%= @course.ratings.overall.average(:value) %>
   </p>
+<h3>Usefulness</h3>
+  <p>
+    <%= @course.ratings.usefulness.average(:value) %>
+  </p>
+<h3>Difficulty</h3>
+  <p>
+    <%= @course.ratings.difficulty.average(:value) %>
+  </p>
+  <h3>Course Load</h3>
+  <p>
+    <%= @course.ratings.courseload.average(:value) %>
+  </p>
+
 
 
 <h2> Rate course:</h2>

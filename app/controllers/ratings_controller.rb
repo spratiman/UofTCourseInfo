@@ -1,10 +1,10 @@
 class RatingsController < ApplicationController
-  def create
+  def create #TODO
     @course = Course.find(params[:course_id])
-    @rating = @course.ratings.find_by(user_id: current_user.id)
+    @rating = @course.ratings.find_by(user_id: current_user.id, rating_type: params[:rating][:rating_type])
     #@rating = Rating.find_by(course_id: :course_id, user_id: current_user.id)
     if @rating.nil?
-    	@rating=@course.ratings.create(value: params[:rating][:value], course_id: :course_id, user_id: current_user.id)	
+    	@rating=@course.ratings.create(value: params[:rating][:value], course_id: :course_id, user_id: current_user.id)
     else
     	@rating.value=params[:rating][:value]
 	  end
@@ -44,7 +44,7 @@ class RatingsController < ApplicationController
     redirect_to course_path(@course)
   end
 
-  def sum 
+  def sum
   end
 
   def show

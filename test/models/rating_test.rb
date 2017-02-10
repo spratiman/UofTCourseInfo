@@ -5,7 +5,8 @@ class RatingTest < ActiveSupport::TestCase
   #   assert true
   # end
     test "should_not_allow_multiple_ratings" do
-  	rating = Rating.new(user: users(:tom), course: courses(:csc373))
+  	rating = Rating.new(user: users(:tom), course: courses(:csc373),
+                        rating: "overall")
   	assert_raises(ActiveRecord::RecordNotUnique) do
   		rating.save
   	end

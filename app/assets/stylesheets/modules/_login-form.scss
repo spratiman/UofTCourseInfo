@@ -5,7 +5,7 @@
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 2px;
-	
+	text-align: left;
 	padding: 40px;
 
 	@media (max-width: $screen-sm-break) {
@@ -17,6 +17,7 @@
 		margin-bottom: 0.2rem;
 		color: #9F9F9F;
 		display: block;
+		text-align: left;
 	}
 
 	@include e('input') {

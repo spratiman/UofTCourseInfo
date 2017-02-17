@@ -2,7 +2,7 @@
     <div class="row">
       <% courses.each do |course| %>
         <div class="col-12 col-md-6 col-lg-4">
-          <article class="course">
+          <article class="card course">
             <span class="course__code"><%= course.code %></span>
             <div class="course__info">
               <h3><%= link_to course.title, course_path(course) %></h3>

@@ -1,9 +1,35 @@
 .site-header {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.21) 0%, rgba(255, 255, 255, 0) 100%);
-	background-color: transparent;
+	// background-color: transparent;
 	border-bottom: none;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
+}
+
+.site-header-spacer {
+	height: 77px;
+}
+
+.page-header {
+
+	padding-bottom: 1.0rem;
+	padding-top: 1.0rem;
+
+	@include e('heading') {
+		margin-top: 0;
+		margin-bottom: 0;
+		line-height: 1.2em;
+		font-size: 2.5rem;
+		text-overflow: ellipsis;
+		font-weight: 200;
+	}
+
+	.course-code {
+		color: $primary-color;
+		font-weight: 600;
+		font-size: 95%;
+		letter-spacing: -1px;
+	}
 }

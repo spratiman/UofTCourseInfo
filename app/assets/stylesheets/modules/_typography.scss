@@ -15,6 +15,8 @@ body {
 p {
 	margin-top: $line-height;
 	margin-bottom: $line-height;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 h1,

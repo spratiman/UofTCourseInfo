@@ -1,99 +1,105 @@
 <% provide(:title, @course.code+": "+@course.title) %>
 
-<div class="container">
-  <h1><span><%= @course.code %>:</span> <%= @course.title %></h1>
-  <h2>Ratings</h2>
-  <p>
-    <%= @course.ratings.average(:value) %>
-  </p>
-  
-  
-  <h2>Rate course:</h2>
-  <% if defined?(@rating) && @rating.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@rating.errors.count, "error") %> prohibited
-          this course from being saved:
-        </h2>
-        <ul>
-          <% @rating.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-  <%= form_for([@course, @course.ratings.build]) do |f| %>
-    <p>
-      <%= f.select(:value, [1, 2, 3, 4, 5]) %>
-    </p>
-    <p>
-      <%= f.submit "Submit"%>
-    </p>
-  <% end %>
+<section class="pattern-back page-header">
+  <div class="container">
+    <h1 class="page-header__heading"><span class="course-code"><%= @course.code %>:</span> <%= @course.title %></h1>
+  </div>
+</section>
 
-</div>
-
-<div class="container">
-
-  <div class="row">
-    <div class="col-12 col-md-8">
-      <h2>Description</h2>
+<section class="ratings">
+  <div class="container center">
+    <h2>Course Rating</h2>
+    <p><%= @course.ratings.average(:value) %></p>
+       
+    <% if defined?(@rating) && @rating.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@rating.errors.count, "error") %> prohibited
+            this course from being saved:
+          </h2>
+          <ul>
+            <% @rating.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <%= form_for([@course, @course.ratings.build]) do |f| %>
       <p>
-        <%= @course.description %>
+        Rate this course: <%= f.select(:value, [1, 2, 3, 4, 5]) %> <%= f.submit "Submit"%>
       </p>
+    <% end %>
+  
+  </div>
+</section>
+
+<section class="course-information">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <h2>Description</h2>
+        <p><%= @course.description %></p>
+      </div>
+      
+      <div class="col-12 col-lg-4">
+        <h3>Distribution Requirement Status</h3>
+        <p></p>
+        <h3>Breadth Requirements</h3>
+      </div>
+    </div>
+
+    <%= link_to 'Edit', edit_course_path(@course) %>
+    <%= link_to 'Back', courses_path %>
+  
+  </div>
+</section>
+
+<section class="comments">
+  
+  <div class="container">
+  
+    <div class="img-with-text row middle">
+      <%= image_tag("comments.png", :class => "img-with-text__img") %>
+      <h2 class="img-with-text__text">Comments</h2>
+    </div>
+
+    <div class="row">
+      <% @course.comments.each do |comment| %>
+        <div class="card col-6">
+          <strong>Commenter:</strong>
+          <%= comment.user_id %>
+             
+          <p>
+            <%= comment.body %>
+          </p>
+          <td><% if current_user.id == comment.user_id %>
+            <%= link_to 'Edit', edit_course_comment_path(@course, comment) %></td>
+          <% end %>
+        </div>
+      <% end %>
     </div>
     
-    <div class="col-12 col-md-4">
-      <h3>Distribution Requirement Status</h3>
-      <p></p>
-      <h3>Breadth Requirements</h3>
+    <% if defined?(@comment) && @comment.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@comment.errors.count, "error") %> prohibited
+            this course from being saved:
+          </h2>
+          <ul>
+            <% @comment.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+    <div class="row center comment-entry-container">
+      <button class="btn btn--large btn--primary" id="addComment">Add Comment</button>
+      <%= form_for([@course, @course.comments.build], html: {class: "col-8 comment-entry"}) do |f| %>
+          <%= f.text_area(:body, :class => 'text-input text-input--fill comment-entry__body') %>
+          <%= f.submit("Submit Comment", :class => 'btn btn--large btn--primary comment-entry__submit') %>
+      <% end %>
     </div>
+
   </div>
-
-</div>
-
-<div class="container">
-
-  <h2>Comments</h2>
-  <% @course.comments.each do |comment| %>
-    <p>
-      <strong>Commenter:</strong>
-      <%= comment.user_id %>
-    </p>
-   
-    <p>
-      <strong>Comment:</strong>
-      <%= comment.body %>
-    </p>
-    <td><% if current_user.id == comment.user_id %>
-      <%= link_to 'Edit', edit_course_comment_path(@course, comment) %></td>
-    <% end %>
-  <% end %>
-  
-  <h2> Add a comment:</h2>
-  <% if defined?(@comment) && @comment.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@comment.errors.count, "error") %> prohibited
-          this course from being saved:
-        </h2>
-        <ul>
-          <% @comment.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-  <%= form_for([@course, @course.comments.build]) do |f| %>
-    <p>
-      <%= f.text_area :body %>
-    </p>
-    <p>
-      <%= f.submit "Submit"%>
-    </p>
-  <% end %>
-  
-  
-  <td><!--%= link_to 'Edit', edit_course_path(@course) %--></td>
-  <%= link_to 'Back', courses_path %>
-</div>
+</section>

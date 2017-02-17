@@ -1,11 +1,6 @@
 .course {
 	position: relative;
-	padding: 20px;
 	height: 100%;
-	background-color: white;
-	border-radius: 2px;
-	box-shadow: 0 4px 6px hsla(0, 0, 51, 0.16);
-	border: 1px solid #dadada;
 
 	@include e('code') {
 		font-size: 36px;

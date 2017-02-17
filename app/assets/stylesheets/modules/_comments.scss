@@ -1,0 +1,17 @@
+.comments {
+	background-color: #F1F4F8;
+	padding-top: 1.0rem;
+	padding-bottom: 1.0rem;
+}
+
+.comment-entry-container {
+	margin-top: 2.0rem;
+}
+
+.comment-entry {
+
+
+	@include e('body') {
+		height: 10.0em;
+	}
+}

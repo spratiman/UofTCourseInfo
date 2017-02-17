@@ -1,21 +1,15 @@
 
 .masthead {
-	padding-top: 160px;
+	padding-top: 120px;
 	padding-bottom: 120px;
 
 	@media (max-width: $screen-lg-break) {
 		padding-top: 100px;
 		padding-bottom: 60px;
 	}
-	
-	color: white;
-	background-color: $secondary-color;
-	background-image: url( <%= asset_path 'pattern.png' %> );
-	
 
 	@include e('title') {
 		line-height: 1.1;
-		padding-top: 80px;
 		padding-bottom: 30px;
 
 		@media (max-width: $screen-lg-break) {
@@ -25,8 +19,6 @@
 	}
 
 	@include e('description') {
-		padding-bottom: 60px;
-
 		@media (max-width: $screen-lg-break) {
 			text-align: center;
 		}

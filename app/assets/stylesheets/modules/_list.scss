@@ -1,0 +1,16 @@
+.inline-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+
+
+	@include e('item') {
+		display: inline-block;
+		margin-right: 40px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

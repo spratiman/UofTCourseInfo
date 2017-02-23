@@ -1,4 +1,6 @@
-<h1>Courses</h1>
+<% provide(:title, "Explore Courses") %>
+<div class="container">
+<h1>Explore Courses</h1>
 
 <%#
   Filterrific adds the `form_for_filterrific` view helper:
@@ -10,30 +12,29 @@
 %>
 
 <%= form_for_filterrific @filterrific do |f| %>
-  <div>
-    Search
-    <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+  <div class="">
     <%= f.text_field(
       :search_query,
-      class: 'filterrific-periodically-observed'
+      class: 'filterrific-periodically-observed text-input text-input--fill text-input--large',
+      placeholder: 'Enter Course Name or Code'
     ) %>
   </div>
   <div>
     Sorted by
     <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
-  </div>
-  <div>
     <%= link_to(
       'Reset filters',
       reset_filterrific_url,
     ) %>
   </div>
-  <%# add an automated spinner to your form when the list is refreshed %>
-  <%= render_filterrific_spinner %>
 <% end %>
 
+<h2>Search Results</h2>
+<%# add an automated spinner to your form when the list is refreshed %>
+<%= render_filterrific_spinner %>
 <%= render(
   partial: 'courses/list',
   locals: { courses: @courses }
 ) %>
 
+</div>

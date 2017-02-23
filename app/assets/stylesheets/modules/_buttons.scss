@@ -1,0 +1,44 @@
+.btn {
+	text-decoration: none;
+	text-align: center;
+	display: inline-block;
+	text-transform: uppercase;
+	border-radius: 2px;
+	padding: 10px 20px;
+	border: none;
+	font-size: 14px;
+
+	background-color: #95989A;
+	color: white;
+
+	@include m('primary') {
+		background-color: $primary-color;
+		color: white;
+	}
+
+	@include m('secondary') {
+		background-color: $secondary-color;
+		color: white;
+	}
+
+	@include m('facebook') {
+		background-color: #3B5998;
+		color: white;
+	}
+
+	@include m('fill') {
+		display: block;
+		width: 100%;
+		padding-top: 1.0em;
+		padding-bottom: 1.0em;
+	}
+
+	@include m('large') {
+		padding: 20px 30px;
+	}
+
+	@include m('small') {
+		font-size: 12px;
+		padding: 5px 10px;
+	}
+}

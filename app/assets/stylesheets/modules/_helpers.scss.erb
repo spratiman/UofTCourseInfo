@@ -1,0 +1,43 @@
+.primary-text {
+	color: $primary-color;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.img-with-text {
+
+	margin-bottom: 2.0rem;
+
+	@include e('img') {
+		height: 80px;
+		margin-bottom: -15px;
+		margin-right: 1.5rem;
+		display: inline-block;
+		vertical-align: center;
+	}
+
+	@include e('text') {
+		display: inline-block;
+		margin: 0;
+		color: #2279E4;
+	}
+}
+
+.pattern-back {
+	color: white;
+	background-color: $secondary-color;
+	background-image: url( <%= asset_path 'pattern.png' %> );
+}
+
+
+// Debug class, remove in production
+.TODO {
+	background-color: red;
+	color: white;
+
+	&:before {
+		content: 'TODO: ';
+	}
+}

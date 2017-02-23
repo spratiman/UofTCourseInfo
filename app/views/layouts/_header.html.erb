@@ -1,17 +1,11 @@
-<header class="navigation-bar navigation-bar--main <%= 'site-header' if !user_signed_in? %>">
+<header class="navigation-bar navigation-bar--main site-header">
 	<div class="container">
-		<% if user_signed_in? %>
-			<%= link_to(:root, class:"navigation-bar__logo") do %>
-				<%= image_tag "logo.png" %>
-			<% end %>
-		<% else %>
-			<%= link_to(:root, class:"navigation-bar__logo") do %>
-				<%= image_tag "logo.png" %>
-			<% end %>
-		<% end -%>
+		<%= link_to(:root, class:"navigation-bar__logo") do %>
+			<%= image_tag "logo.png" %>
+		<% end %>
 		<nav class="navigation-bar__nav navigation-bar__nav--main">
 			<ul class="inline-list">
-				<li class="inline-list__item"><a href="">Explore</a></li>
+				<li class="inline-list__item"><%= link_to "Explore", courses_path %></li>
 				<% if user_signed_in? %>
 					<!-- Put profile code here -->
 				<% else %>
@@ -21,3 +15,4 @@
 		</nav>
 	</div>
 </header>
+<div class="site-header-spacer"></div>

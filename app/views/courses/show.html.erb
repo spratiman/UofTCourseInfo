@@ -1,47 +1,55 @@
-<p>
-  <strong>Code:</strong>
-  <%= @course.code %>
-</p>
- 
-<p>
-  <strong>Title:</strong>
-  <%= @course.title %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
+<% provide(:title, @course.code+": "+@course.title) %>
 
-<h2> Comments (<%= @course.comments.count() %>)</h2>
-<%= render :template => 'comments/index' , :locals => {:num => 5} %>
-<%= link_to 'Show all', course_comments_path(@course) %>
+<section class="pattern-back page-header">
+  <div class="container">
+    <h1 class="page-header__heading"><span class="course-code"><%= @course.code %>:</span> <%= @course.title %></h1>
+  </div>
+</section>
 
-<h2>Ratings (<%= @course.ratings.count() %>)</h2>
-<h3>Overall</h3>
-  <p>
-    <%= @course.ratings.overall.average(:value) %>
-  </p>
-<h3>Usefulness</h3>
-  <p>
-    <%= @course.ratings.usefulness.average(:value) %>
-  </p>
-<h3>Difficulty</h3>
-  <p>
-    <%= @course.ratings.difficulty.average(:value) %>
-  </p>
-  <h3>Course Load</h3>
-  <p>
-    <%= @course.ratings.courseload.average(:value) %>
-  </p>
+<section class="ratings">
+  <div class="container center">
+    <h2>Course Rating</h2>
+    <h3>Overall(<%= @course.ratings.overall.count() %>)</h3>
+    <p><%= @course.ratings.overall.average(:value) %></p>
+    <h3>Usefulness(<%= @course.ratings.usefulness.count() %>)</h3>
+    <p><%= @course.ratings.usefulness.average(:value) %></p>
+    <h3>Difficulty(<%= @course.ratings.difficulty.count() %>)</h3>
+    <p><%= @course.ratings.difficulty.average(:value) %></p>
+    <h3>Course Load(<%= @course.ratings.courseload.count() %>)</h3>
+    <p><%= @course.ratings.courseload.average(:value) %></p>
+       
+   <h2> Rate course:</h2>
+   <%= render :template => 'ratings/new' %>
+  
+  </div>
+</section>
 
+<section class="course-information">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <h2>Description</h2>
+        <p><%= @course.description %></p>
+      </div>
+      
+      <div class="col-12 col-lg-4">
+        <h3>Distribution Requirement Status</h3>
+        <p></p>
+        <h3>Breadth Requirements</h3>
+      </div>
+    </div>
 
+    <%= link_to 'Edit', edit_course_path(@course) %>
+    <%= link_to 'Back', courses_path %>
+  
+  </div>
+</section>
 
-<h2> Rate course:</h2>
-<%= render :template => 'ratings/new' %>
-
-<h2> Add a comment:</h2>
-<%= render :template => 'comments/new' %>
-
-
-<td><!--%= link_to 'Edit', edit_course_path(@course) %--></td>
-<%= link_to 'Back', courses_path %>
+<section class="comments">
+  
+  <div class="container">
+    <%= render :template => 'comments/index' , :locals => {:num => 5} %>
+    <%= link_to 'Show all', course_comments_path(@course) %>
+    <%= render :template => 'comments/new' %>
+  </div>
+</section>

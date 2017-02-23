@@ -1,18 +1,18 @@
-<div id="filterrific_results">
-<table>
-    <tr>
-      <th><%= filterrific_sorting_link(@filterrific, :code) %></th>
-      <th>Title</th>
-      <th>Description</th>
-    </tr>
-    <% courses.each do |course| %>
-      <tr>
-        <td><%= link_to(course.code, course_path(course)) %></td>
-        <td><%= link_to(course.title, course_path(course)) %></td>
-        <td><%= course.description %></td>
-        <td><%= link_to('Add', course_add_path(course))%></td>
-        <td><%= link_to 'Details', course_path(course) %></td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+<section id="filterrific_results">
+    <div class="row">
+      <% courses.each do |course| %>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card course">
+            <span class="course__code"><%= course.code %></span>
+            <div class="course__info">
+              <h3><%= link_to course.title, course_path(course) %></h3>
+            </div>
+            <div class="course__actions">
+              <%= link_to 'Details', course_path(course), :class => "btn btn--small"  %>
+              <%= link_to "Add", { :action => :add}, :class => "btn btn--primary btn--small"  %>
+            </div>
+          </article>
+        </div>
+      <% end -%>
+    </div>
+</section>

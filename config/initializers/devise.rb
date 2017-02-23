@@ -247,7 +247,8 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-   config.omniauth :facebook, 'APP_ID', 'APP_SECRET', callback_url: "CALLBACK_URL"#, scope: 'user,public_repo'
+   config.omniauth :facebook, '385330845162676', 'd1a8d277bf4a4d75d49235e333b2fc77', callback_url: "http://localhost:3000/users/auth/facebook/callback",
+                   :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}} #, scope: 'user,public_repo'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

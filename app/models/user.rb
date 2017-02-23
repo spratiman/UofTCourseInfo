@@ -1,7 +1,9 @@
 class User < ApplicationRecord
-  has_many :courses
+  # Relations
+  has_many :courses, through: :user_course_relations 
   has_many :comments
   has_many :ratings
+  has_many :user_course_relations, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

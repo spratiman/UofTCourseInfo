@@ -74,51 +74,24 @@ class CoursesController < ApplicationController
 
 	#Add
 	def add
-		#Course.initialize
-		user_session[:student] ||={}
-		courses = user_session[:student][:courses]
 
-		#If exists, add new, else create a new variable
-		if (courses && courses != {})
-			user_session[:student][:courses] <<  params[:course_id]
-			#Course.student_count
-		else
-			user_session[:student][:courses] = Array(params[:course_id])
-			#Course.student_count
-		end
+		@user = User.find(current_user.id)
+		@course = Course.find(params[:course_id])
+		@user_course_relation = UserCourseRelation.create(user_id: current_user.id, course_id: params[:course_id])
+		@user_course_relation.save
 
-		#Handle the request
-		# respond_to do |format|
-		# 	format.json {render json: student_session.build_json}
-		# 	format.html {redirect_to student_index_path}
-		# end
 	end
 
 
 	#Delete
 	def delete
-		session[:student] ||={}
-		courses = session[:student][:courses]
-		id = params[:id]
-		all = params[:all]
 
-		#Is the ID present?
-		unless id.blank?
-			unless all.blank?
-				courses.delete(params['id'])
-			else
-				courses.delete_at(courses.index(id) || courses.length)
-			end
-		else
-			courses.delete
-		end
+		@user = User.find(current_user.id)
+		@course = Course.find(params[:course_id])
+		@user_course_relation = UserCourseRelation.find(params[:comment][:id])
+		@user_course_relation.destroy
 
-		#Handle the request
-		respond_to do |format|
-			format.json { render json: student_session.build_json}
-			format.html {redirect_to student_index_path}
-		end
-		end
+	end
 
 	private
 

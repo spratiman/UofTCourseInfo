@@ -1,0 +1,39 @@
+.course {
+	position: relative;
+	height: 100%;
+
+	@include e('code') {
+		font-size: 36px;
+		font-weight: 300;
+		color: $medium-gray;
+		margin: 0;
+	}
+
+	@include e('info') {
+
+		margin-bottom: 3.0em;
+
+		h3 {
+			margin-top: 0;
+			font-size: 24px;
+			line-height: 1.2;
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+
+	@include e('actions') {
+		text-align: right;
+		bottom: 0;
+		right: 0;
+		position: absolute;
+		padding: inherit;
+		width: 100%;
+	}
+}
+
+#filterrific_results {
+	margin-top: 3.0rem;
+	margin-bottom: 3.0rem;
+}

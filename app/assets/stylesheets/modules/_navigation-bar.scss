@@ -1,0 +1,47 @@
+.navigation-bar {
+
+	@include m('main') {
+		background-color: #21335E;
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+		border-bottom-color: lighten(#21335E, 10%);
+		margin-bottom: $line-height;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		a {
+			color: white;
+			text-decoration: none;
+			vertical-align: middle;
+		}
+
+	}
+
+	@include m('footer') {
+		background-color: #F1F1F1;
+
+		a {
+			color: #95989A;
+			text-decoration: none;
+			font-size: 12px;
+			line-height: ($base / 12px);
+		}
+
+	}
+
+	@include e('nav') {
+		font-weight: 600;
+
+		@include m('main') {
+			float: right;
+		}
+
+		@include m('footer') {
+			text-align: center;
+		}
+	}
+
+	@include e('logo') {
+		height: 1.0em;
+	}
+}

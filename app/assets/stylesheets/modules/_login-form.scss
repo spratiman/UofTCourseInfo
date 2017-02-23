@@ -1,0 +1,71 @@
+.login-form {
+	background-color: #F6F6F6;
+	color:#676767;
+	border-color: #E8E8E8;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 2px;
+	text-align: left;
+	padding: 40px;
+
+	@media (max-width: $screen-sm-break) {
+		padding: 20px
+	}
+
+	@include e('label') {
+		font-size: 12px;
+		margin-bottom: 0.2rem;
+		color: #9F9F9F;
+		display: block;
+		text-align: left;
+	}
+
+	@include e('input') {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 1.0rem;
+		border-radius: 2px;
+		border-color: #eee;
+		border-width: 1px;
+		border-style: solid;
+		outline-color: $primary-color;
+	}
+
+	@include e('link') {
+		display: inline-block;
+		width: 100%;
+		font-size: 12px;
+		margin-bottom: 1.0rem;
+		text-align: center;
+		text-decoration: none;
+	}
+}
+
+.text-divider {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	margin-top: 0.8rem;
+	margin-bottom: 0.8rem;
+	font-size: 12px;
+	color: #676767;
+
+	&:before,
+	&:after {
+		content: '';
+		display: inline-block;
+		width: calc((100% - 5.0em) / 2);
+		height: 1px;
+		background-color: #C8C8C8;
+		vertical-align: middle;
+	}
+
+	&:before {
+		margin-right: 1.0rem;
+	}
+
+	&:after {
+		margin-left: 1.0rem;
+	}
+}

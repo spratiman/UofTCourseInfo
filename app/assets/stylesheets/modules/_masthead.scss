@@ -1,0 +1,26 @@
+
+.masthead {
+	padding-top: 120px;
+	padding-bottom: 120px;
+
+	@media (max-width: $screen-lg-break) {
+		padding-top: 100px;
+		padding-bottom: 60px;
+	}
+
+	@include e('title') {
+		line-height: 1.1;
+		padding-bottom: 30px;
+
+		@media (max-width: $screen-lg-break) {
+			text-align: center;
+			padding-top: 30px;
+		}
+	}
+
+	@include e('description') {
+		@media (max-width: $screen-lg-break) {
+			text-align: center;
+		}
+	}
+}

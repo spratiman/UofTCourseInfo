@@ -1,0 +1,24 @@
+.input-group {
+	
+}
+
+.text-input {
+
+	border-radius: 2px;
+	border-color: #eee;
+	border-width: 1px;
+	border-style: solid;
+	padding: 10px;
+	outline-color: $primary-color;
+
+	@include m('fill') {
+		display: block;
+		width: 100%;
+		margin-bottom: 1.0rem;
+	}
+
+	@include m('large') {
+		font-size: 24px;
+		padding: 20px;
+	}
+}

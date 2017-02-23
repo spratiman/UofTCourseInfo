@@ -1,0 +1,26 @@
+
+<% count = 0 %>
+<% @course.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.user_id %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+  <p>
+    <strong>Created_at:</strong>
+    <%= comment.created_at %>
+  </p>
+  <p>
+    <strong>Updated_at:</strong>
+    <%= comment.updated_at %>
+  </p>
+  <td><% if current_user.id == comment.user_id %>
+    <%= link_to 'Edit', edit_course_comment_path(@course, comment) %></td>
+  <% end %>
+  <% count = count + 1%>
+  <% break if defined?(num) && count >= num %>
+<% end %>

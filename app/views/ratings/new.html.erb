@@ -1,0 +1,28 @@
+<% if defined?(@rating) && @rating.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@rating.errors.count, "error") %> prohibited
+        this course from being saved:
+      </h2>
+      <ul>
+        <% @rating.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= form_for([@course, @course.ratings.build]) do |f| %>
+  <% Rating::RATING_TYPES.each do |type| %>
+
+  <p>
+    <%= f.label :rating_type %><br>
+    <%= f.text_field :rating_type, :value=>type , :readonly=>true %>
+  </p>
+  <p>
+    <%= f.select(:value, [1, 2, 3, 4, 5]) %>
+  </p>
+  <p>
+    <%= f.submit "Submit"%>
+  </p>
+  <% end %>
+<% end %>

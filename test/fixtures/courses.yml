@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  code: MyString
-  title: MyString
-  description: MyText
+csc373:
+  code: abc373
+  title: Algorithm Design, Analysis & Complexity
+  description: Standard algorithm design techniques where students will be expected to show good design principles and adequate skills at reasoning about the correctness and complexity of algorithms.
 
-two:
-  code: MyString
-  title: MyString
-  description: MyText
+csc473:
+  code: abc473
+  title: Advanced Algorithm Design
+  description: Advanced algorithm design techniques to blow your mind if not blown by now.

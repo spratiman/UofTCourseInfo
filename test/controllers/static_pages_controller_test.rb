@@ -6,6 +6,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     @base_title = "UofT Course Info App"
   end
 
+
   test "should get root" do
     get static_pages_root
     assert_response :success
@@ -16,5 +17,5 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Home | #{{@base_title}}"
   end
-
+  
 end

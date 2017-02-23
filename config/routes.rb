@@ -15,11 +15,13 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
 
   resources :courses do
+    get 'add'
+    get 'delete'
     resources :comments
     resources :ratings
   end
-  
+
   get '/fetchcourses', to: 'courses#fetch', defaults: { format: 'js' }
-  get '/add', to: 'courses#add'
+  #get '/add', to: 'courses#add'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

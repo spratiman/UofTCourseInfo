@@ -1,0 +1,29 @@
+<!--h1>Showing rating</h1-->
+<p>
+  <strong>Course_id:</strong>
+  <%= @rating.course_id %>
+</p>
+
+<p>
+  <strong>User_id:</strong>
+  <%= @rating.user_id %>
+</p>
+<p>
+  <strong>Value:</strong>
+  <%= @rating.value %>
+</p>
+<p>
+  <strong>Rating type:</strong>
+  <%= @rating.rating_type %>
+</p>
+<p>
+  <strong>Created at:</strong>
+  <%= @rating.created_at %>
+</p>
+<p>
+  <strong>Updated at:</strong>
+  <%= @rating.updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_course_rating_path(@rating)%>
+<%= link_to 'Back', course_ratings_path %>

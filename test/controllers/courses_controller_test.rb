@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class CoursesControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @user = users(:tom)
+  end
+
+   test "should get show" do
+     get courses_path
+     assert_response :success
+   end
 end

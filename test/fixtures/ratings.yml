@@ -1,1 +1,7 @@
-# empty
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value: 5
+  user: tom
+  course: csc373
+  rating_type: Overall

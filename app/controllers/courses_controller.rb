@@ -34,7 +34,7 @@ class CoursesController < ApplicationController
 	end
 
 	def new
-		@course =Course.new
+		@course = Course.new
 	end
 
 	def edit
@@ -74,22 +74,26 @@ class CoursesController < ApplicationController
 
 	#Add
 	def add
-		session[:student] ||={}
-		courses = session[:student][:courses]
+		#Course.initialize
+		user_session[:student] ||={}
+		courses = user_session[:student][:courses]
 
 		#If exists, add new, else create a new variable
 		if (courses && courses != {})
-			session[:student][:courses] << params[:id]
+			user_session[:student][:courses] <<  params[:course_id]
+			#Course.student_count
 		else
-			session[:student][:courses] = Array(params[:id])
+			user_session[:student][:courses] = Array(params[:course_id])
+			#Course.student_count
 		end
 
 		#Handle the request
-		respond_to do |format|
-			format.json {render json: student_session.build_json}
-			format.html {redirect_to cart_index_path}
-		end
+		# respond_to do |format|
+		# 	format.json {render json: student_session.build_json}
+		# 	format.html {redirect_to student_index_path}
+		# end
 	end
+
 
 	#Delete
 	def delete
@@ -123,6 +127,6 @@ class CoursesController < ApplicationController
 		end
 
 		def course_params
-			params.require(:course).permit(:code, :name, :description)
+			params.require(:course).permit(:code, :name, :description, :course_id)
 		end
 end

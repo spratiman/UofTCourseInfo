@@ -1,26 +1,26 @@
-
 <% count = 0 %>
-<% @course.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.user_id %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-  <p>
-    <strong>Created_at:</strong>
-    <%= comment.created_at %>
-  </p>
-  <p>
-    <strong>Updated_at:</strong>
-    <%= comment.updated_at %>
-  </p>
-  <td><% if current_user.id == comment.user_id %>
-    <%= link_to 'Edit', edit_course_comment_path(@course, comment) %></td>
-  <% end %>
-  <% count = count + 1%>
-  <% break if defined?(num) && count >= num %>
-<% end %>
+<div class="img-with-text row middle">
+      <%= image_tag("comments.png", :class => "img-with-text__img") %>
+      <h2 class="img-with-text__text">Comments</h2>
+    </div>
+    <div class="comment-count">
+      <span class="comment-count__number"><%= @course.comments.count %></span>
+      <span class="comment-count__label"><%= (@course.comments.count == 1 ? "Comment" : "Comments") %></span>
+    </div>
+    <div class="row">
+      <% @course.comments.each do |comment| %>
+        <div class="card col-6">
+          <strong>Commenter:</strong>
+          <%= comment.user_id %>
+
+          <p>
+            <%= comment.body %>
+          </p>
+          <td><% if current_user.id == comment.user_id %>
+            <%= link_to 'Edit', edit_course_comment_path(@course, comment) %></td>
+          <% end %>
+        </div>
+        <% count = count + 1%>
+        <% break if defined?(num) && count >= num %>
+      <% end %>
+    </div>

@@ -1,4 +1,3 @@
-<% count = 0 %>
 <div class="img-with-text row middle">
       <%= image_tag("comments.png", :class => "img-with-text__img") %>
       <h2 class="img-with-text__text">Comments</h2>
@@ -8,8 +7,13 @@
       <span class="comment-count__label"><%= (@course.comments.count == 1 ? "Comment" : "Comments") %></span>
     </div>
     <div class="row">
+      <% count = 0 %>
       <% @course.comments.each do |comment| %>
-        <div class="card col-6">
+        <% if defined?(num) && count >= num %>
+          <div class="card col-6 hidden-comment">
+        <% else %>
+          <div class="card col-6">
+        <% end %>
           <strong>Commenter:</strong>
           <%= comment.user_id %>
 
@@ -21,6 +25,10 @@
           <% end %>
         </div>
         <% count = count + 1%>
-        <% break if defined?(num) && count >= num %>
       <% end %>
     </div>
+    <% if defined?(num) && @course.comments.count > num %>
+      <div class="row center">
+        <button class="btn btn--large btn--link" id="showAllComments">Show all</button>
+      </div>
+    <% end %>

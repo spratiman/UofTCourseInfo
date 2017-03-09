@@ -9,7 +9,7 @@
             </div>
             <div class="course__actions">
               <%= link_to 'Details', course_path(course), :class => "btn btn--small"  %>
-              <%= link_to "Add", { :action => :add}, :class => "btn btn--primary btn--small"  %>
+              <%= link_to course_add_path(course)  %>
             </div>
           </article>
         </div>

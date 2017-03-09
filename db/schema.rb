@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20170223225601) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.index ["course_id"], name: "index_comments_on_course_id"
-    t.index ["user_id", "course_id"], name: "index_comments_on_user_id_and_course_id", unique: true
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -29,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170223225601) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["code"], name: "index_courses_on_code", unique: true
   end
 
   create_table "identities", force: :cascade do |t|
@@ -43,11 +43,12 @@ ActiveRecord::Schema.define(version: 20170223225601) do
   create_table "ratings", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_id"
-    t.integer  "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "value",       default: 3,         null: false
+    t.string   "rating_type", default: "overall", null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.index ["course_id"], name: "index_ratings_on_course_id"
-    t.index ["user_id", "course_id"], name: "index_ratings_on_user_id_and_course_id", unique: true
+    t.index ["user_id", "course_id", "rating_type"], name: "index_ratings_on_user_id_and_course_id_and_rating_type", unique: true
     t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 

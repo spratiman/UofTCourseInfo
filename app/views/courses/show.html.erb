@@ -17,10 +17,10 @@
     <p><%= @course.ratings.difficulty.average(:value) %></p>
     <h3>Course Load(<%= @course.ratings.courseload.count() %>)</h3>
     <p><%= @course.ratings.courseload.average(:value) %></p>
-       
+
    <h2> Rate course:</h2>
    <%= render :template => 'ratings/new' %>
-  
+
   </div>
 </section>
 
@@ -31,7 +31,7 @@
         <h2>Description</h2>
         <p><%= @course.description %></p>
       </div>
-      
+
       <div class="col-12 col-lg-4">
         <h3>Distribution Requirement Status</h3>
         <p></p>
@@ -41,15 +41,14 @@
 
     <%= link_to 'Edit', edit_course_path(@course) %>
     <%= link_to 'Back', courses_path %>
-  
+
   </div>
 </section>
 
 <section class="comments">
-  
+
   <div class="container">
-    <%= render :template => 'comments/index' , :locals => {:num => 5} %>
-    <%= link_to 'Show all', course_comments_path(@course) %>
+    <%= render :template => 'comments/index' , :locals => {:num => 6} %>
     <%= render :template => 'comments/new' %>
   </div>
 </section>

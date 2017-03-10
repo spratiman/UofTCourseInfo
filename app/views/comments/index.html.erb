@@ -20,11 +20,15 @@
           <p>
             <%= comment.body %>
           </p>
-          <td><% if current_user.id == comment.user_id %>
-            <%= link_to 'Edit', edit_course_comment_path(@course, comment) %></td>
+          <% if current_user.id == comment.user_id %>
+            <td><%= link_to 'Edit', edit_course_comment_path(@course, comment) %></td>
+          <% end %>
+          <td><%= link_to 'Reply', course_comment_path(@course, comment) %></td>
+          <% if comment.has_children? %>
+            <td>Children = <%= comment.child_ids %></td>
           <% end %>
         </div>
-        <% count = count + 1%>
+        <% count = count + 1 %>
       <% end %>
     </div>
     <% if defined?(num) && @course.comments.count > num %>

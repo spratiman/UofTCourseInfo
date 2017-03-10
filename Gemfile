@@ -67,3 +67,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Plugin to filter and search
 gem 'filterrific'
 gem 'will_paginate'
+
+gem 'ancestry'

@@ -1,25 +1,39 @@
-<!--h1>Showing comment</h1-->
+<div class="card col-6">
+<strong>Commenter:</strong>
+<%= @comment.user_id %>
+
 <p>
-  <strong>Course_id:</strong>
-  <%= @comment.course_id %>
-</p>
- 
-<p>
-  <strong>User_id:</strong>
-  <%= @comment.user_id %>
-</p>
-<p>
-  <strong>Body:</strong>
   <%= @comment.body %>
 </p>
-<p>
-  <strong>Created at:</strong>
-  <%= @comment.created_at %>
-</p>
-<p>
-  <strong>Updated at:</strong>
-  <%= @comment.updated_at %>
-</p>
+<% if current_user.id == @comment.user_id %>
+  <td><%= link_to 'Edit', edit_course_comment_path(@course, @comment) %></td>
+<% end %>
+<% if @comment.parent.present? %>
+  <td>Parent = <%= @comment.parent_id %>
+<% end %>
+<% if @comment.has_children? %>
+  <td>Children = <%= @comment.child_ids %></td>
+<% end %>
+</div>
 
-<%= link_to 'Edit', edit_course_comment_path(@course)%>
-<%= link_to 'Back', course_comments_path %>
+<% @comment.children.each do |comment| %>
+  <div class="card col-6">
+    <strong>Commenter:</strong>
+    <%= comment.user_id %>
+
+    <p>
+      <%= comment.body %>
+    </p>
+    <% if current_user.id == comment.user_id %>
+      <td><%= link_to 'Edit', edit_course_comment_path(@course, comment) %></td>
+    <% end %>
+  </div>
+  <% end %>
+
+  <div class="row center comment-entry-container">
+    <button class="btn btn--large btn--primary" id="addComment">Reply</button>
+    <%= form_for([@course, @comment.children.create], html: {class: "col-8 comment-entry"}) do |f| %>
+        <%= f.text_area(:body, :class => 'text-input text-input--fill comment-entry__body') %>
+        <%= f.submit("Submit Comment", :class => 'btn btn--large btn--primary comment-entry__submit') %>
+    <% end %>
+  </div>

@@ -20,7 +20,7 @@
           <p>
             <%= comment.body %>
           </p>
-          <% if current_user.id == comment.user_id %>
+          <% if user_signed_in? && current_user.id == comment.user_id %>
             <td><%= link_to 'Edit', edit_course_comment_path(@course, comment) %></td>
           <% end %>
           <td><%= link_to 'Reply', course_comment_path(@course, comment) %></td>

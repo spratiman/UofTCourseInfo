@@ -33,7 +33,8 @@ while received >= limit do
 	parsed_content.each do |course|
 		puts course["id"]
 		received += 1
-		Course.update_db(course["code"], course["name"], course["description"])
+		Course.update_db(course["code"], course["name"], course["description"],
+        course["prerequisites"], course["exclusions"], course["breadths"])
 	end
 	skip += received
 end
